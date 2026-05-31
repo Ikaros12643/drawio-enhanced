@@ -1,0 +1,47 @@
+<mxfile host="app.diagrams.net" modified="2026-05-31T00:00:00.000Z" agent="drawio-enhanced" version="24.7.17">
+  <diagram id="llm-rag-pipeline-flow" name="LLM RAG Pipeline">
+    <mxGraphModel dx="1200" dy="760" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1160" pageHeight="620" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <mxCell id="title" value="LLM RAG Pipeline" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=18;fontStyle=1;fontColor=#0d0d0d;" vertex="1" parent="1">
+          <mxGeometry x="430" y="20" width="300" height="30" as="geometry"/>
+        </mxCell>
+        <mxCell id="q" value="User Query&lt;br&gt;&lt;font color=&quot;#6e6e80&quot;&gt;intent + context&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#10a37f;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="60" y="130" width="150" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="rewrite" value="Query Rewrite&lt;br&gt;&lt;font color=&quot;#6e6e80&quot;&gt;normalize + expand&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#fafafa;strokeColor=#d4d4d4;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="250" y="130" width="150" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="retrieve" value="Retriever&lt;br&gt;&lt;font color=&quot;#6e6e80&quot;&gt;top-k passages&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#10a37f;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="440" y="130" width="150" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="store" value="Vector Store&lt;br&gt;&lt;font color=&quot;#6e6e80&quot;&gt;embeddings + metadata&lt;/font&gt;" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#f8fafc;strokeColor=#94a3b8;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="455" y="260" width="120" height="82" as="geometry"/>
+        </mxCell>
+        <mxCell id="prompt" value="Prompt Builder&lt;br&gt;&lt;font color=&quot;#6e6e80&quot;&gt;citations + constraints&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#e5e5e5;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="630" y="130" width="160" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="model" value="LLM&lt;br&gt;&lt;font color=&quot;#6e6e80&quot;&gt;reason + generate&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#f0fdf4;strokeColor=#10a37f;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="830" y="130" width="140" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="answer" value="Answer&lt;br&gt;&lt;font color=&quot;#6e6e80&quot;&gt;grounded response&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#f0fdf4;strokeColor=#10a37f;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
+          <mxGeometry x="1000" y="130" width="140" height="64" as="geometry"/>
+        </mxCell>
+        <mxCell id="guard" value="Policy Check&lt;br&gt;&lt;font color=&quot;#6e6e80&quot;&gt;safety + PII&lt;/font&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fffbeb;strokeColor=#f59e0b;strokeWidth=1.5;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="830" y="275" width="140" height="86" as="geometry"/>
+        </mxCell>
+        <mxCell id="note" value="Weak relations omitted: logging, cache refresh, offline evaluation." style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#fafafa;strokeColor=#d4d4d4;dashed=1;fontColor=#6e6e80;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="620" y="420" width="350" height="44" as="geometry"/>
+        </mxCell>
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#10a37f;endArrow=classic;endFill=1;" edge="1" source="q" target="rewrite" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#10a37f;endArrow=classic;endFill=1;" edge="1" source="rewrite" target="retrieve" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" value="search" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#1d4ed8;endArrow=classic;endFill=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="retrieve" target="store" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" value="contexts" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#10a37f;endArrow=classic;endFill=1;" edge="1" source="retrieve" target="prompt" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#10a37f;endArrow=classic;endFill=1;" edge="1" source="prompt" target="model" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;strokeColor=#10a37f;endArrow=classic;endFill=1;" edge="1" source="model" target="answer" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" value="screen" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;strokeColor=#f97316;endArrow=classic;endFill=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" source="model" target="guard" parent="1"><mxGeometry relative="1" as="geometry"/></mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
