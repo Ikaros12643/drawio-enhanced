@@ -1,0 +1,36 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="title" value="&lt;b&gt;AI Agent Architecture&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=16;fontStyle=1;fontColor=#f1f5f9;" vertex="1" parent="1">
+      <mxGeometry x="280" y="20" width="280" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="user" value="User" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#1e293b;strokeColor=#3b82f6;strokeWidth=1.5;fontSize=13;fontColor=#e2e8f0;" vertex="1" parent="1">
+      <mxGeometry x="300" y="80" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="agent" value="Agent Core" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#1e293b;strokeColor=#3b82f6;strokeWidth=1.5;fontSize=13;fontStyle=1;fontColor=#e2e8f0;" vertex="1" parent="1">
+      <mxGeometry x="300" y="170" width="120" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="memory" value="Memory" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#0f172a;strokeColor=#475569;strokeWidth=1.5;fontSize=13;fontColor=#e2e8f0;" vertex="1" parent="1">
+      <mxGeometry x="80" y="270" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="tools" value="Tools" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#0f172a;strokeColor=#475569;strokeWidth=1.5;fontSize=13;fontColor=#e2e8f0;" vertex="1" parent="1">
+      <mxGeometry x="300" y="270" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="output" value="Response" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;fillColor=#064e3b;strokeColor=#10b981;strokeWidth=1.5;fontSize=13;fontColor=#e2e8f0;" vertex="1" parent="1">
+      <mxGeometry x="520" y="270" width="120" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#3b82f6;endArrow=classic;endFill=1;" edge="1" source="user" target="agent" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#10b981;endArrow=classic;endFill=1;" edge="1" source="agent" target="memory" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#3b82f6;endArrow=classic;endFill=1;" edge="1" source="agent" target="tools" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#10b981;endArrow=classic;endFill=1;" edge="1" source="agent" target="output" parent="1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

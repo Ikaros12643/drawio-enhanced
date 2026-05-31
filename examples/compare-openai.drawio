@@ -1,0 +1,33 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="title" value="&lt;b&gt;Monolith vs Microservices&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=16;fontStyle=1" vertex="1" parent="1">
+      <mxGeometry x="280" y="20" width="280" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="h1" value="Monolith" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#10a37f;strokeWidth=1.5;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="40" y="80" width="180" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="h2" value="Microservices" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#10a37f;strokeWidth=1.5;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+      <mxGeometry x="420" y="80" width="180" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="r1" value="Single codebase" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#e5e5e5;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="40" y="160" width="180" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="r2" value="Distributed services" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#e5e5e5;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="420" y="160" width="180" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="r3" value="Hard to scale" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#e5e5e5;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="40" y="240" width="180" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="r4" value="Independent scaling" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#e5e5e5;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="420" y="240" width="180" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="r5" value="Single deployment" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#e5e5e5;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="40" y="320" width="180" height="50" as="geometry"/>
+    </mxCell>
+    <mxCell id="r6" value="CI/CD per service" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#e5e5e5;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
+      <mxGeometry x="420" y="320" width="180" height="50" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>
