@@ -7,10 +7,9 @@ description: >
   Also trigger when the user provides a document and asks for diagrams to be inserted, or mentions drawio/.drawio files.
   Prefer simple grid placement, sparse readable edges, and limited manual routing for dense diagrams. Do not perform detailed coordinate optimization unless explicitly requested.
 ---
-
 # Draw.io Enhanced
 
-融合轻量工作流 + 12 套视觉风格 + draw.io XML 模板 + 故障排查资料的图表生成 skill。
+融合轻量工作流 + 14 套视觉风格 + draw.io XML 模板 + 故障排查资料的图表生成 skill。
 默认目标是快速生成可打开、可编辑、结构清晰的 `.drawio` 文件；精确坐标优化仅在用户明确要求或排查渲染问题时进行。
 
 ## 工作流
@@ -25,6 +24,7 @@ description: >
 4. 如果插图位置会改变文档结构，等待用户确认；否则选择最合理的位置继续
 
 **如果直接给出概念**：
+
 1. 确认要传达的核心信息
 2. 选择图表类型 (见下方图表类型参考)
 3. 进入步骤 2
@@ -33,7 +33,9 @@ description: >
 
 根据图表类型和用户场景，从 `themes/` 目录中推荐 2-3 个最匹配的风格（见下方风格推荐矩阵）。
 
-如果用户未指定风格，直接使用推荐矩阵中的第一个风格。只有在用户明确要求选择、对风格敏感、或图表用于正式交付时才询问确认。
+如果用户要求云厂商架构图，且明确指定 AWS、Azure 或 GCP，使用 `themes/cloud-brand.md` 中对应厂商的色板。如果用户只说“云架构图”但没有指定厂商，先询问使用哪个云厂商，不要默认猜测。
+
+如果用户未指定风格，直接使用推荐矩阵中的 `flat-icon` 风格。在用户明确要求选择、对风格敏感、或图表用于正式交付时询问确认。
 
 完整风格定义见 `themes/{name}.md`。
 
@@ -42,6 +44,7 @@ description: >
 生成 ASCII 草图，展示所有节点及标签、箭头方向及标签、分组/区域、颜色角色分配、近似尺寸和布局方向。同时标出哪些边是主路径、哪些边可以省略或合并。
 
 示例：
+
 ```
 Direction: left-to-right | Nodes: 4 | Type: flow
 
@@ -69,6 +72,7 @@ Direction: left-to-right | Nodes: 4 | Type: flow
 使用固定网格快速放置节点，不要在回复或内部推理中展开逐点坐标计算。
 
 默认网格：
+
 - 起点：`x=40, y=80`
 - 列间距：180px
 - 行间距：120px
@@ -78,6 +82,7 @@ Direction: left-to-right | Nodes: 4 | Type: flow
 - 短标签/状态节点：120x40
 
 布局原则：
+
 - 节点超过 6 个时优先换行、分组或改用垂直/分层布局，不要压缩到固定画布范围。
 - 画布随内容自然扩展；不要限制在固定 X/Y 范围内。
 - 坐标只需整齐、可读、可编辑；不追求像素级最优。
@@ -90,6 +95,7 @@ Direction: left-to-right | Nodes: 4 | Type: flow
 在生成边之前做一次有限路由规划，目标是少而清楚，不是完全最优。
 
 默认策略：
+
 - 简单图：边只写 `source` / `target` + `edgeStyle=orthogonalEdgeStyle`。
 - 层级图：主路径使用中心到中心的自然连接点，如上到下用底部到顶部，左到右用右侧到左侧。
 - 密集图：对主路径和跨层长边显式设置 `exitX/Y`、`entryX/Y`；对次要边使用虚线或删除。
@@ -97,6 +103,7 @@ Direction: left-to-right | Nodes: 4 | Type: flow
 - 每条手动路由边最多使用 2 个 waypoint；超过 2 个仍然很乱时，删边或改成注释/图例。
 
 需要避免：
+
 - 不要让一条边穿过非源/非目标节点。
 - 不要画大量横贯全图的虚线。
 - 不要为弱关系添加长距离连线。
@@ -115,6 +122,7 @@ Direction: left-to-right | Nodes: 4 | Type: flow
 7. 如果一条边需要复杂绕行，先考虑删除、合并、改成注释或放入图例
 
 **⚠️ 关键转义规则**：
+
 - 如果 `value` 属性包含 HTML 标签（如 `<font>`、`<b>`），标签内的所有双引号必须转义为 `&quot;`
 - 正确示例：`value="Text&lt;br&gt;&lt;font color=&quot;#6e6e80&quot;&gt;Author&lt;/font&gt;"`
 - 错误示例：`value="Text&lt;br&gt;&lt;font color="#6e6e80"&gt;Author&lt;/font&gt;"` （会导致 XML 解析失败）
@@ -122,6 +130,7 @@ Direction: left-to-right | Nodes: 4 | Type: flow
 ### 步骤 8: 轻量交付检查
 
 交付前只检查这些会导致文件不可用的问题：
+
 - XML 格式合法
 - `id` 唯一
 - 边的 `source` / `target` 都存在
@@ -138,7 +147,7 @@ Direction: left-to-right | Nodes: 4 | Type: flow
 
 如果生成的 XML 有语法问题，使用 `scripts/fix-xml.py` 自动修复：
 
-如果`uv`可用，优先使用uv，否则回退到使用`python`
+如果 `uv`可用，优先使用uv，否则回退到使用 `python`
 
 ```
 uv run scripts/fix-xml.py input.xml output.xml
@@ -155,6 +164,7 @@ python scripts/fix-xml.py input.xml output.xml
 保存 `.drawio` 文件到 `./diagrams/{diagram-name}.drawio` 或用户指定路径。
 
 **如果用户要求导出** (PNG/SVG/PDF)：
+
 1. 检测环境并定位 draw.io CLI (见 `references/usage-guide.md`)
 2. 使用 `--embed-diagram` 导出，保留可编辑性
 3. 导出成功后删除中间 `.drawio` 文件
@@ -169,91 +179,54 @@ python scripts/fix-xml.py input.xml output.xml
 
 ## 图表类型参考
 
-| 类型 | 代码 | 适用场景 |
-|------|------|---------|
-| 线性流程 | `flow` | 顺序步骤 A→B→C |
-| 垂直流程 | `flow-vertical` | 自上而下的过程 |
-| 对比 | `compare` | A vs B 并排对比 |
-| 层级堆叠 | `layers` | 技术栈分层 |
-| 循环 | `loop` | 迭代过程 |
-| 树形 | `tree` | 层级结构、分类法 |
-| 中心辐射 | `hub` | 核心概念 + 分支 |
-| 平行列 | `columns` | 3+ 并行概念 |
-| 矩阵 | `matrix` | 多维度对比 |
-| 漏斗 | `funnel` | 过滤、转化 |
-| 时间线 | `timeline` | 版本演进、历史 |
-| 时序图 | `sequence` | 组件交互 |
+| 类型     | 代码              | 适用场景         |
+| -------- | ----------------- | ---------------- |
+| 线性流程 | `flow`          | 顺序步骤 A→B→C |
+| 垂直流程 | `flow-vertical` | 自上而下的过程   |
+| 对比     | `compare`       | A vs B 并排对比  |
+| 层级堆叠 | `layers`        | 技术栈分层       |
+| 循环     | `loop`          | 迭代过程         |
+| 树形     | `tree`          | 层级结构、分类法 |
+| 中心辐射 | `hub`           | 核心概念 + 分支  |
+| 平行列   | `columns`       | 3+ 并行概念      |
+| 矩阵     | `matrix`        | 多维度对比       |
+| 漏斗     | `funnel`        | 过滤、转化       |
+| 时间线   | `timeline`      | 版本演进、历史   |
+| 时序图   | `sequence`      | 组件交互         |
 
 ### 选择指南
 
-| 内容模式 | 推荐类型 |
-|---------|---------|
-| 顺序步骤 | `flow` 或 `flow-vertical` |
-| 两件事对比 | `compare` |
-| 3+ 并行概念 | `columns` 或 `hub` |
-| 分层系统 | `layers` |
-| 迭代/循环过程 | `loop` |
-| 一个核心，多个分支 | `hub` 或 `tree` |
-| 组件通信 | `sequence` |
-| 随时间变化 | `timeline` |
-| 多标准评估 | `matrix` |
-| 渐进过滤 | `funnel` |
+| 内容模式           | 推荐类型                      |
+| ------------------ | ----------------------------- |
+| 顺序步骤           | `flow` 或 `flow-vertical` |
+| 两件事对比         | `compare`                   |
+| 3+ 并行概念        | `columns` 或 `hub`        |
+| 分层系统           | `layers`                    |
+| 迭代/循环过程      | `loop`                      |
+| 一个核心，多个分支 | `hub` 或 `tree`           |
+| 组件通信           | `sequence`                  |
+| 随时间变化         | `timeline`                  |
+| 多标准评估         | `matrix`                    |
+| 渐进过滤           | `funnel`                    |
 
 ---
 
 ## 风格推荐矩阵
 
-| 图表类型 | 推荐风格 |
-|---------|---------|
-| 架构图 | flat-icon, openai, blueprint, tech-blue |
-| 流程图 | flat-icon, tech-blue, mint, terracotta |
-| 对比图 | openai, notion, tech-blue, morandi |
-| 时序图 | openai, notion, blueprint, tech-blue |
-| UML 类图 | openai, notion, blueprint, morandi |
-| ER 图 | openai, notion, blueprint, tech-blue |
-| 网络拓扑 | flat-icon, blueprint, tech-blue, indigo |
-| 思维导图 | flat-icon, notion, mint, indigo |
-| 数据流图 | flat-icon, blueprint, tech-blue, indigo |
-| 时间线 | flat-icon, notion, mint, tech-blue |
-| Agent 架构 | flat-icon, openai, glassmorphism, claude |
-
----
-
-## 配色系统
-
-详见 `references/color-palette.md`，包含三大类配色方案。
-
-### 经典六色 (默认)
-
-| 语义 | fillColor | strokeColor | 用途 |
-|------|-----------|-------------|------|
-| 蓝色 | `#dae8fc` | `#6c8ebf` | 主要元素、输入/输出 |
-| 绿色 | `#d5e8d4` | `#82b366` | 成功、处理步骤 |
-| 黄色 | `#fff2cc` | `#d6b656` | 警告、中间处理 |
-| 红色 | `#f8cecc` | `#b85450` | 错误、终止节点 |
-| 紫色 | `#e1d5e7` | `#9673a6` | 容器、分组 |
-| 橙色 | `#ffe6cc` | `#d79b00` | 次要容器、特殊模块 |
-
-### 语义颜色分配
-
-| 节点类型 | 推荐颜色 |
-|---------|---------|
-| 用户输入/起点 | 蓝色 |
-| 标准处理步骤 | 绿色 |
-| 决策/分支点 | 黄色 |
-| 关键转换/高亮 | 橙色 |
-| 数据源/外部系统 | 紫色 |
-| 成功输出/终点 | 绿色或蓝色 |
-| 数据库/存储 | 紫色 |
-| 错误/失败 | 红色 |
-
-### 颜色预算
-
-| 节点数量 | 颜色数 | 分配策略 |
-|---------|--------|---------|
-| 3-5 | 2-3 | 蓝色系主导 + 最多 1 个强调色 |
-| 6-8 | 3-4 | 蓝色系 ~60%，语义转折点加 1-2 色 |
-| 9+ | 4-5 | 蓝色系 ~50%，分散 2-3 个非蓝色 |
+| 图表类型       | 推荐风格                                             |
+| -------------- | ---------------------------------------------------- |
+| 架构图         | flat-icon, openai, material, blueprint, tech-blue    |
+| 云厂商架构图   | cloud-brand（需指定 AWS/Azure/GCP）, blueprint, tech-blue |
+| 流程图         | flat-icon, material, tech-blue, mint, terracotta     |
+| 对比图         | openai, material, notion, tech-blue, morandi         |
+| 时序图         | openai, material, notion, blueprint, tech-blue       |
+| UML 类图       | openai, material, notion, blueprint, morandi         |
+| ER 图          | openai, material, notion, blueprint, tech-blue       |
+| 网络拓扑       | flat-icon, blueprint, tech-blue, indigo              |
+| 思维导图       | flat-icon, notion, mint, indigo                      |
+| 数据流图       | flat-icon, blueprint, tech-blue, indigo              |
+| 时间线         | flat-icon, notion, mint, tech-blue                   |
+| Agent 架构     | flat-icon, openai, glassmorphism, claude             |
 
 ---
 
@@ -289,14 +262,14 @@ python scripts/fix-xml.py input.xml output.xml
 
 详见 `references/edge-styles.md`。
 
-| 类型 | 关键样式 |
-|------|---------|
+| 类型 | 关键样式                                                         |
+| ---- | ---------------------------------------------------------------- |
 | 标准 | `edgeStyle=orthogonalEdgeStyle;endArrow=classic;strokeWidth=2` |
-| 粗边 | `strokeWidth=3` |
-| 虚线 | `dashed=1;strokeWidth=1.5` |
-| 动画 | `flowAnimation=1` |
-| 曲线 | `curved=1` |
-| 残差 | `strokeColor=#999999;dashed=1;strokeWidth=1.5` |
+| 粗边 | `strokeWidth=3`                                                |
+| 虚线 | `dashed=1;strokeWidth=1.5`                                     |
+| 动画 | `flowAnimation=1`                                              |
+| 曲线 | `curved=1`                                                     |
+| 残差 | `strokeColor=#999999;dashed=1;strokeWidth=1.5`                 |
 
 ---
 
@@ -317,18 +290,17 @@ python scripts/fix-xml.py input.xml output.xml
 
 ## 支持文件
 
-| 文件/目录 | 何时读取 |
-|------|---------|
-| `themes/{name}.md` | 应用颜色时 — 12 套独立样式文件 |
-| `references/color-palette.md` | 选择配色方案时 — 经典六色 + Material + 云平台 |
-| `references/edge-routing.md` | 密集图或故障排查时 — 主路径路由、边穿越严重、双向边重叠、路由异常 |
-| `references/layout-constraints.md` | 故障排查或复杂布局时 — 网格、间距、尺寸规范 |
-| `references/edge-styles.md` | 应用边样式时 — 标准/粗/虚线/动画/曲线模板 |
-| `references/shape-library.md` | 使用特殊形状时 — flowchart/basic/云平台形状 |
-| `references/xml-templates.md` | 生成 XML 时 — 节点/箭头/容器模板 + 格式规则 |
-| `references/xml-advanced.md` | 进阶需求时 — 推理规则/嵌套容器/图层/标签/元数据/ELK/暗黑模式 |
-| `references/usage-guide.md` | 交付后 — 打开文件/导出 PNG/SVG/PDF/WSL2/Troubleshooting |
-| `scripts/fix-xml.py` | XML 有语法问题时 — 24 步自动修复 |
-| `drawio-layout-algorithms.md` | 复杂布局或用户要求严格布局时 — 12 种布局算法及公式 |
-| `examples/` 目录 | 参考完整图表 — 12 个 `.drawio` 示例 |
-| `drawio-quality-checklist.md` | 故障排查时 — 图表打不开、渲染异常、导出失败、明显布局问题 |
+| 文件/目录                            | 何时读取                                                           |
+| ------------------------------------ | ------------------------------------------------------------------ |
+| `themes/{name}.md`                 | 应用颜色时 — 14 套独立样式文件                                    |
+| `references/edge-routing.md`       | 密集图或故障排查时 — 主路径路由、边穿越严重、双向边重叠、路由异常 |
+| `references/layout-constraints.md` | 故障排查或复杂布局时 — 网格、间距、尺寸规范                       |
+| `references/edge-styles.md`        | 应用边样式时 — 标准/粗/虚线/动画/曲线模板                         |
+| `references/shape-library.md`      | 使用特殊形状时 — flowchart/basic/云平台形状                       |
+| `references/xml-templates.md`      | 生成 XML 时 — 节点/箭头/容器模板 + 格式规则                       |
+| `references/xml-advanced.md`       | 进阶需求时 — 推理规则/嵌套容器/图层/标签/元数据/ELK/暗黑模式      |
+| `references/usage-guide.md`        | 交付后 — 打开文件/导出 PNG/SVG/PDF/WSL2/Troubleshooting           |
+| `scripts/fix-xml.py`               | XML 有语法问题时 — 24 步自动修复                                  |
+| `drawio-layout-algorithms.md`      | 复杂布局或用户要求严格布局时 — 12 种布局算法及公式                |
+| `examples/` 目录                   | 参考完整图表 — 12 个 `.drawio` 示例                             |
+| `drawio-quality-checklist.md`      | 故障排查时 — 图表打不开、渲染异常、导出失败、明显布局问题         |

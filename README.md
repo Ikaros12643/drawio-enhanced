@@ -4,7 +4,7 @@
 
 ## 特性
 
-- **12 套视觉风格** — 7 套源自 fireworks-tech-graph (SVG 转换) + 5 套源自 FlowForge，统一整合
+- **14 套视觉风格** — 7 套源自 fireworks-tech-graph、5 套源自 FlowForge，另含 Material 与云厂商品牌主题
 - **轻量网格布局** — 直接放置节点，画布随内容自然扩展
 - **边预算与精简** — 主路径优先，复杂关系用合并边、注释、图例表达
 - **结构化工作流** — 需求理解 → 风格选择 → ASCII 草图 → 边精简 → XML 生成 → 轻量检查 → 交付
@@ -16,7 +16,7 @@
 ```
 drawio-enhanced/
 ├── SKILL.md                          # 主 skill 文件 — 工作流、XML 参考、关键规则
-├── drawio-themes.md                  # 12 套样式定义 — 色板、节点样式、箭头样式、文字样式
+├── themes/                           # 14 套样式定义 — 色板、节点样式、箭头样式、文字样式
 ├── drawio-style-examples.md          # 6 套完整 XML 示例 — 可直接复制使用
 ├── drawio-layout-algorithms.md       # 复杂布局参考 — 坐标公式、适用场景
 ├── drawio-quality-checklist.md       # 故障排查清单 — 布局/文本/XML/样式
@@ -49,6 +49,8 @@ drawio-enhanced/
 | 10 | mint | FlowForge | 清新、轻松设计 |
 | 11 | terracotta | FlowForge | 商务、战略内容 |
 | 12 | indigo | FlowForge | bold、权威设计 |
+| 13 | material | Material Design | 正式文档、演示、产品流程 |
+| 14 | cloud-brand | 云厂商品牌 | AWS/Azure/GCP 云架构图 |
 
 ## 图表类型
 
