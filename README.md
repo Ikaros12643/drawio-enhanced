@@ -1,3 +1,7 @@
+<p align="right">
+  <a href="./README_ZH.md">中文</a> | <strong>English</strong>
+</p>
+
 # Draw.io Enhanced Skill
 
 A skill for quickly generating editable draw.io diagrams. It uses a lightweight grid, an edge budget, and limited manual routing by default, avoiding repeated runtime coordinate optimization so AI can handle layout, color, connectors, and XML generation while humans focus on content.

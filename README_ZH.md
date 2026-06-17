@@ -1,3 +1,7 @@
+<p align="right">
+  <strong>中文</strong> | <a href="./README.md">English</a>
+</p>
+
 # Draw.io Enhanced Skill
 
 快速生成可编辑 draw.io 图表的 skill。默认使用轻量网格、边预算和有限手动路由，避免在运行时反复进行坐标优化，让 AI 处理图表的布局、配色、连线和 XML 生成，人专注于内容表达。
