@@ -1,64 +1,94 @@
 # Draw.io Enhanced Skill
 
-快速生成可编辑 draw.io 图表的 skill。默认使用轻量网格、边预算和有限手动路由，避免在运行时反复进行坐标优化。
+A skill for quickly generating editable draw.io diagrams. It uses a lightweight grid, an edge budget, and limited manual routing by default, avoiding repeated runtime coordinate optimization so AI can handle layout, color, connectors, and XML generation while humans focus on content.
 
-## 特性
+## Why This Skill Exists
 
-- **14 套视觉风格** — 7 套源自 fireworks-tech-graph、5 套源自 FlowForge，另含 Material 与云厂商品牌主题
-- **轻量网格布局** — 直接放置节点，画布随内容自然扩展
-- **边预算与精简** — 主路径优先，复杂关系用合并边、注释、图例表达
-- **结构化工作流** — 需求理解 → 风格选择 → ASCII 草图 → 边精简 → XML 生成 → 轻量检查 → 交付
-- **颜色预算规则** — 防止"彩虹效应"，保持视觉层次清晰
-- **按需参考资料** — 密集图读取边路由参考，质量检查仅在出问题时读取
+Creating diagrams while writing documentation is tedious. Manual diagramming often consumes too much energy on colors, layout, alignment, and connector routing, which distracts from the actual information structure.
 
-## 文件结构
+Many existing diagram-generation skills are based on SVG or HTML. They can produce good-looking results, but the output is usually difficult to edit manually in draw.io. draw.io itself has excellent editability and broad adoption, but its built-in styles are relatively limited, and polished layouts still require a lot of manual work.
 
-```
+`drawio-enhanced` was created to combine the strengths of multiple excellent open-source projects: layout algorithms, visual styles, XML generation, quality checks, and AI-assisted editing. The goal is to let AI free humans from repetitive manual work and keep the author focused on the message.
+
+## Design Goals
+
+1. **Editability first** - Output `.drawio` files instead of SVG or HTML that are hard to revise later.
+2. **Content first** - Let AI handle layout, color, connectors, and style while users focus on what to communicate.
+3. **Rich visual styles** - Provide multiple styles for documentation, architecture diagrams, flows, comparisons, and presentations.
+4. **Lightweight and practical** - Use stable grids, edge budgets, and checking rules instead of overly complex runtime optimization.
+5. **Documentation-oriented** - Generate diagrams that fit technical docs, product notes, reports, and slide decks.
+
+## Features
+
+- **14 visual styles** - Inspired by fireworks-tech-graph, FlowForge, Material Design, and cloud vendor brand styles
+- **Lightweight grid layout** - Places nodes directly and lets the canvas expand naturally with content
+- **Edge budget and simplification** - Prioritizes the main path and uses merged edges, notes, or legends for complex relationships
+- **Structured workflow** - Requirement understanding → style selection → ASCII sketch → edge simplification → XML generation → lightweight checks → delivery
+- **Color budget rules** - Prevents the “rainbow effect” and keeps visual hierarchy clear
+- **References on demand** - Reads dense edge-routing references and quality checklists only when needed
+- **Native draw.io output** - Generates XML diagrams that can continue to be edited manually in diagrams.net / draw.io
+
+## File Structure
+
+```text
 drawio-enhanced/
-├── SKILL.md                          # 主 skill 文件 — 工作流、XML 参考、关键规则
-├── themes/                           # 14 套样式定义 — 色板、节点样式、箭头样式、文字样式
-├── drawio-style-examples.md          # 6 套完整 XML 示例 — 可直接复制使用
-├── drawio-layout-algorithms.md       # 复杂布局参考 — 坐标公式、适用场景
-├── drawio-quality-checklist.md       # 故障排查清单 — 布局/文本/XML/样式
+├── SKILL.md                          # Main skill file: workflow, XML reference, key rules
+├── themes/                           # 14 style definitions: palettes, node styles, edge styles, text styles
+├── drawio-style-examples.md          # 6 complete XML examples, ready to copy
+├── drawio-layout-algorithms.md       # Complex layout reference: coordinate formulas and use cases
+├── drawio-quality-checklist.md       # Troubleshooting checklist: layout, text, XML, style
 ├── examples/
-│   ├── flow-flat-icon.drawio         # 流程图 — flat-icon 风格
-│   ├── compare-openai.drawio         # 对比图 — openai 风格
-│   └── architecture-tech-blue.drawio # 架构图 — tech-blue 风格
-└── README.md                         # 本文件
+│   ├── flow-flat-icon.drawio         # Flow diagram in flat-icon style
+│   ├── compare-openai.drawio         # Comparison diagram in openai style
+│   └── architecture-tech-blue.drawio # Architecture diagram in tech-blue style
+├── README.md                         # English README
+└── README_ZH.md                      # Chinese README
 ```
 
-## 快速开始
+## Quick Start
 
-1. 将 `drawio-enhanced/` 文件夹复制到你的 skills 目录
-2. 在对话中引用：`使用 drawio-enhanced skill 生成图表`
-3. 或直接描述需求：`画一个 CI/CD 流程图，用 openai 风格`
+1. Copy the `drawio-enhanced/` folder into your skills directory
+2. Reference it in a conversation: `use the drawio-enhanced skill to generate a diagram`
+3. Or describe the request directly: `draw a CI/CD flowchart in the openai style`
 
-## 风格列表
+## Style List
 
-| # | 名称 | 来源 | 最佳场景 |
-|---|------|------|---------|
-| 1 | flat-icon | fireworks | 博客、文档、演示 (默认) |
-| 2 | dark-terminal | fireworks | 技术博客、开发者文档 |
-| 3 | blueprint | fireworks | 正式架构文档、技术规范 |
-| 4 | notion | fireworks | 文档内嵌、笔记、知识库 |
-| 5 | glassmorphism | fireworks | 产品演示、演讲、官网 |
-| 6 | claude | fireworks | Anthropic 风格演示 |
-| 7 | openai | fireworks | API 文档、技术报告 |
-| 8 | tech-blue | FlowForge | 技术内容、现代设计 (默认) |
-| 9 | morandi | FlowForge | 高级感、低调优雅 |
-| 10 | mint | FlowForge | 清新、轻松设计 |
-| 11 | terracotta | FlowForge | 商务、战略内容 |
-| 12 | indigo | FlowForge | bold、权威设计 |
-| 13 | material | Material Design | 正式文档、演示、产品流程 |
-| 14 | cloud-brand | 云厂商品牌 | AWS/Azure/GCP 云架构图 |
+| # | Name | Source | Best For |
+|---|------|--------|----------|
+| 1 | flat-icon | fireworks-tech-graph | Blogs, docs, presentations (default) |
+| 2 | dark-terminal | fireworks-tech-graph | Technical blogs, developer docs |
+| 3 | blueprint | fireworks-tech-graph | Formal architecture docs, technical specifications |
+| 4 | notion | fireworks-tech-graph | Embedded docs, notes, knowledge bases |
+| 5 | glassmorphism | fireworks-tech-graph | Product demos, talks, websites |
+| 6 | claude | fireworks-tech-graph | Anthropic-style presentations |
+| 7 | openai | fireworks-tech-graph | API docs, technical reports |
+| 8 | tech-blue | FlowForge | Technical content, modern design (default) |
+| 9 | morandi | FlowForge | Premium, subtle, elegant diagrams |
+| 10 | mint | FlowForge | Fresh, lightweight designs |
+| 11 | terracotta | FlowForge | Business and strategy content |
+| 12 | indigo | FlowForge | Bold, authoritative diagrams |
+| 13 | material | Material Design | Formal docs, presentations, product flows |
+| 14 | cloud-brand | Cloud vendor brands | AWS/Azure/GCP cloud architecture diagrams |
 
-## 图表类型
+## Diagram Types
 
 flow, flow-vertical, compare, layers, loop, tree, hub, columns, matrix, funnel, timeline, sequence
 
-## 设计原则
+## Design Principles
 
-1. **结构决定内容** — 先确认 ASCII 草图，再生成 XML
-2. **网格决定布局** — 使用简单网格直接放置，画布随内容扩展
-3. **主题决定颜色** — 从主题色板选色，不随机十六进制
-4. **少边优先清晰** — 边过多时删减、合并或改成注释，不把所有关系都连出来
+1. **Structure determines content** - Confirm the ASCII sketch before generating XML
+2. **Grid determines layout** - Use a simple grid and let the canvas expand with content
+3. **Theme determines color** - Select colors from the theme palette instead of random hex values
+4. **Fewer edges are clearer** - When there are too many edges, reduce, merge, or turn them into notes instead of connecting everything
+5. **Editability over decoration** - Prefer native draw.io shapes, text, and connectors to keep diagrams maintainable
+
+## Acknowledgements
+
+`drawio-enhanced` is inspired by several excellent open-source projects. Thanks to these projects and their authors for their contributions to AI diagram generation, draw.io integration, and technical diagram design.
+
+- **[jgraph/drawio-mcp](https://github.com/jgraph/drawio-mcp)** - Inspired the draw.io MCP integration, CLI export flow, browser URL generation, basic XML skeleton, and cross-platform handling.
+- **[FlowForge / fireworks-tech-graph](https://github.com/yizhiyanhua-ai/fireworks-tech-graph)** - Provided valuable ideas for layout algorithms, color budgets, theme palettes, ASCII sketching, quality checks, and technical diagram design workflows.
+- **[fireworks-tech-graph](https://github.com/yizhiyanhua-ai/fireworks-tech-graph)** - Its SVG technical diagram system, including semantic shapes, semantic arrows, visual styles, icon libraries, and obstacle-aware routing, informed the draw.io style expansion.
+- **[DayuanJiang/next-ai-draw-io](https://github.com/DayuanJiang/next-ai-draw-io)** - Provided useful engineering references for AI-driven draw.io editing, XML validation and repair, shape libraries, version history, MCP architecture, and visual validation workflows.
+
+This project is not intended to replace those projects. It absorbs their design ideas and combines them around one goal: editable draw.io diagrams that are more useful for documentation workflows.
