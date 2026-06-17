@@ -1,0 +1,63 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="2" value="Multi-Agent System Architecture" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontColor=#f1f5f9;fontStyle=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+      <mxGeometry x="250" y="20" width="300" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="3" value="AI Agent Ecosystem" style="swimlane;startSize=24;rounded=1;arcSize=12;strokeWidth=1.5;strokeDashPattern=4 3;html=1;fontColor=#f1f5f9;fillColor=#0f172a;strokeColor=#334155;" vertex="1" parent="1">
+      <mxGeometry x="40" y="80" width="520" height="440" as="geometry"/>
+    </mxCell>
+    <mxCell id="4" value="&lt;b&gt;Orchestrator Agent&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#94a3b8;font-size:11px;&quot;&gt;Router &amp;amp; Coordinator&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=2;fontSize=13;fontColor=#e2e8f0;fillColor=#1e293b;strokeColor=#60a5fa;gradientColor=#0f172a;" vertex="1" parent="3">
+      <mxGeometry x="160" y="160" width="160" height="80" as="geometry"/>
+    </mxCell>
+    <mxCell id="5" value="&lt;b&gt;Planner Agent&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#94a3b8;font-size:11px;&quot;&gt;Task Decomposition&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=2;fontSize=13;fontColor=#e2e8f0;fillColor=#7c2d12;strokeColor=#fb923c;gradientColor=#0f172a;" vertex="1" parent="3">
+      <mxGeometry x="160" y="30" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="6" value="&lt;b&gt;Coding Agent&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#94a3b8;font-size:11px;&quot;&gt;Code Generation&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=2;fontSize=13;fontColor=#e2e8f0;fillColor=#1e293b;strokeColor=#475569;gradientColor=#0f172a;" vertex="1" parent="3">
+      <mxGeometry x="360" y="70" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="7" value="&lt;b&gt;Testing Agent&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#94a3b8;font-size:11px;&quot;&gt;Test Execution&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=2;fontSize=13;fontColor=#e2e8f0;fillColor=#1e293b;strokeColor=#475569;gradientColor=#0f172a;" vertex="1" parent="3">
+      <mxGeometry x="360" y="250" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="8" value="&lt;b&gt;Review Agent&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#94a3b8;font-size:11px;&quot;&gt;Code Quality&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=2;fontSize=13;fontColor=#e2e8f0;fillColor=#78350f;strokeColor=#fbbf24;gradientColor=#0f172a;" vertex="1" parent="3">
+      <mxGeometry x="160" y="340" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="9" value="&lt;b&gt;Deploy Agent&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#94a3b8;font-size:11px;&quot;&gt;Release Pipeline&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=2;fontSize=13;fontColor=#e2e8f0;fillColor=#1e293b;strokeColor=#475569;gradientColor=#0f172a;" vertex="1" parent="3">
+      <mxGeometry x="20" y="250" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="10" value="&lt;b&gt;Monitor Agent&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;color:#94a3b8;font-size:11px;&quot;&gt;Perf. Tracking&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=12;strokeWidth=2;fontSize=13;fontColor=#e2e8f0;fillColor=#064e3b;strokeColor=#34d399;gradientColor=#0f172a;" vertex="1" parent="3">
+      <mxGeometry x="20" y="70" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="11" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;endArrow=classic;endFill=1;startArrow=classic;startFill=1;strokeColor=#60a5fa;fontColor=#cbd5e1;fontSize=10;" edge="1" parent="3" source="5" target="4">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="12" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;endArrow=classic;endFill=1;startArrow=classic;startFill=1;strokeColor=#34d399;fontColor=#cbd5e1;fontSize=10;" edge="1" parent="3" source="6" target="4">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="13" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;endArrow=classic;endFill=1;startArrow=classic;startFill=1;strokeColor=#f87171;fontColor=#cbd5e1;fontSize=10;" edge="1" parent="3" source="7" target="4">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="14" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;endArrow=classic;endFill=1;startArrow=classic;startFill=1;strokeColor=#c084fc;fontColor=#cbd5e1;fontSize=10;" edge="1" parent="3" source="8" target="4">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="15" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;endArrow=classic;endFill=1;startArrow=classic;startFill=1;strokeColor=#a78bfa;fontColor=#cbd5e1;fontSize=10;" edge="1" parent="3" source="9" target="4">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points"/>
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="16" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;endArrow=classic;endFill=1;startArrow=classic;startFill=1;strokeColor=#60a5fa;fontColor=#cbd5e1;fontSize=10;" edge="1" parent="3" source="10" target="4">
+      <mxGeometry relative="1" as="geometry">
+        <Array as="points"/>
+      </mxGeometry>
+    </mxCell>
+  </root>
+</mxGraphModel>

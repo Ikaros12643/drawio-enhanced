@@ -138,7 +138,13 @@ Direction: left-to-right | Nodes: 4 | Type: flow
 
 如果生成的 XML 有语法问题，使用 `scripts/fix-xml.py` 自动修复：
 
-```bash
+如果`uv`可用，优先使用uv，否则回退到使用`python`
+
+```
+uv run scripts/fix-xml.py input.xml output.xml
+```
+
+```
 python scripts/fix-xml.py input.xml output.xml
 ```
 

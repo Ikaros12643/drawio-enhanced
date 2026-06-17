@@ -1,0 +1,81 @@
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="title" value="2025 Product Roadmap" style="text;html=1;fontSize=16;fontColor=#1E293B;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
+      <mxGeometry x="310" y="15" width="300" height="25" as="geometry"/>
+    </mxCell>
+    <mxCell id="container" value="" style="swimlane;startSize=24;rounded=1;arcSize=8;strokeWidth=1;strokeDashPattern=4 3;html=1;fillColor=#EEF0F8;strokeColor=#A0AAC8;container=1;recursiveResize=0;collapsible=0;" vertex="1" parent="1">
+      <mxGeometry x="40" y="50" width="840" height="280" as="geometry"/>
+    </mxCell>
+    <mxCell id="tl-start" value="" style="ellipse;html=1;fillColor=none;strokeColor=none;editable=0;pointerEvents=0;" vertex="1" parent="container">
+      <mxGeometry x="60" y="128" width="4" height="4" as="geometry"/>
+    </mxCell>
+    <mxCell id="tl-end" value="" style="ellipse;html=1;fillColor=none;strokeColor=none;editable=0;pointerEvents=0;" vertex="1" parent="container">
+      <mxGeometry x="860" y="128" width="4" height="4" as="geometry"/>
+    </mxCell>
+    <mxCell id="timeline" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=2;endArrow=classic;endFill=1;strokeColor=#3B82F6;" edge="1" parent="container" source="tl-start" target="tl-end">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="q1" value="&lt;b&gt;Q1 2025&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:11px;color:#64748B;&quot;&gt;Platform Foundation&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fillColor=#DBEAFE;strokeColor=#3B82F6;fontColor=#1E293B;" vertex="1" parent="container">
+      <mxGeometry x="80" y="110" width="140" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="q1-sub1" value="User Auth" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fillColor=#DBEAFE;strokeColor=#3B82F6;fontColor=#1E293B;" vertex="1" parent="container">
+      <mxGeometry x="90" y="190" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="q1-sub2" value="API Gateway" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fillColor=#DBEAFE;strokeColor=#3B82F6;fontColor=#1E293B;" vertex="1" parent="container">
+      <mxGeometry x="215" y="190" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="e-q1-sub1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;dashed=1;strokeColor=#A0AAC8;endArrow=none;" edge="1" parent="container" source="q1" target="q1-sub1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e-q1-sub2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;dashed=1;strokeColor=#A0AAC8;endArrow=none;" edge="1" parent="container" source="q1" target="q1-sub2">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="q2" value="&lt;b&gt;Q2 2025&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:11px;color:#64748B;&quot;&gt;Core Features&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fillColor=#DDD6FE;strokeColor=#7C3AED;fontColor=#1E293B;" vertex="1" parent="container">
+      <mxGeometry x="260" y="110" width="140" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="q2-sub1" value="Search" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fillColor=#DDD6FE;strokeColor=#7C3AED;fontColor=#1E293B;" vertex="1" parent="container">
+      <mxGeometry x="270" y="190" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="q2-sub2" value="Dashboard" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fillColor=#DDD6FE;strokeColor=#7C3AED;fontColor=#1E293B;" vertex="1" parent="container">
+      <mxGeometry x="395" y="190" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="e-q2-sub1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;dashed=1;strokeColor=#A0AAC8;endArrow=none;" edge="1" parent="container" source="q2" target="q2-sub1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e-q2-sub2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;dashed=1;strokeColor=#A0AAC8;endArrow=none;" edge="1" parent="container" source="q2" target="q2-sub2">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="q3" value="&lt;b&gt;Q3 2025&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:11px;color:#64748B;&quot;&gt;AI Integration&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fillColor=#E0E7FF;strokeColor=#4F62B0;fontColor=#1E293B;" vertex="1" parent="container">
+      <mxGeometry x="440" y="110" width="140" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="q3-sub1" value="Chatbot" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fillColor=#E0E7FF;strokeColor=#4F62B0;fontColor=#1E293B;" vertex="1" parent="container">
+      <mxGeometry x="450" y="190" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="q3-sub2" value="Recommendations" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fillColor=#E0E7FF;strokeColor=#4F62B0;fontColor=#1E293B;" vertex="1" parent="container">
+      <mxGeometry x="575" y="190" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="e-q3-sub1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;dashed=1;strokeColor=#A0AAC8;endArrow=none;" edge="1" parent="container" source="q3" target="q3-sub1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e-q3-sub2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;dashed=1;strokeColor=#A0AAC8;endArrow=none;" edge="1" parent="container" source="q3" target="q3-sub2">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="q4" value="&lt;b&gt;Q4 2025&lt;/b&gt;&lt;br&gt;&lt;span style=&quot;font-size:11px;color:#64748B;&quot;&gt;Enterprise Scale&lt;/span&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fillColor=#D4F0E0;strokeColor=#3AA06A;fontColor=#1E293B;" vertex="1" parent="container">
+      <mxGeometry x="620" y="110" width="140" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="q4-sub1" value="SSO" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fillColor=#D4F0E0;strokeColor=#3AA06A;fontColor=#1E293B;" vertex="1" parent="container">
+      <mxGeometry x="630" y="190" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="q4-sub2" value="Audit Logs" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fillColor=#D4F0E0;strokeColor=#3AA06A;fontColor=#1E293B;" vertex="1" parent="container">
+      <mxGeometry x="755" y="190" width="120" height="40" as="geometry"/>
+    </mxCell>
+    <mxCell id="e-q4-sub1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;dashed=1;strokeColor=#A0AAC8;endArrow=none;" edge="1" parent="container" source="q4" target="q4-sub1">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+    <mxCell id="e-q4-sub2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1;dashed=1;strokeColor=#A0AAC8;endArrow=none;" edge="1" parent="container" source="q4" target="q4-sub2">
+      <mxGeometry relative="1" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>

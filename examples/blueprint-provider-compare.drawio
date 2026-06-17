@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxGraphModel adaptiveColors="auto">
+  <root>
+    <mxCell id="0"/>
+    <mxCell id="1" parent="0"/>
+    <mxCell id="2" value="&lt;b&gt;Cloud Providers Comparison&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontColor=#93c5fd;" vertex="1" parent="1">
+      <mxGeometry x="260" y="20" width="300" height="30" as="geometry"/>
+    </mxCell>
+    <mxCell id="3" value="AWS" style="swimlane;startSize=24;rounded=0;strokeWidth=1;strokeDashPattern=6 3;html=1;fontColor=#93c5fd;fillColor=#1e3a5f;strokeColor=#2563eb;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+      <mxGeometry x="40" y="80" width="180" height="620" as="geometry"/>
+    </mxCell>
+    <mxCell id="4" value="Azure" style="swimlane;startSize=24;rounded=0;strokeWidth=1;strokeDashPattern=6 3;html=1;fontColor=#93c5fd;fillColor=#1e3a5f;strokeColor=#2563eb;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+      <mxGeometry x="260" y="80" width="180" height="620" as="geometry"/>
+    </mxCell>
+    <mxCell id="5" value="GCP" style="swimlane;startSize=24;rounded=0;strokeWidth=1;strokeDashPattern=6 3;html=1;fontColor=#93c5fd;fillColor=#1e3a5f;strokeColor=#2563eb;fontStyle=1;fontSize=14;" vertex="1" parent="1">
+      <mxGeometry x="480" y="80" width="180" height="620" as="geometry"/>
+    </mxCell>
+    <mxCell id="10" value="EC2" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#1a2e4a;strokeColor=#2563eb;" vertex="1" parent="3">
+      <mxGeometry x="20" y="40" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="11" value="S3" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#134e4a;strokeColor=#14b8a6;" vertex="1" parent="3">
+      <mxGeometry x="20" y="160" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="12" value="RDS" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#134e4a;strokeColor=#14b8a6;" vertex="1" parent="3">
+      <mxGeometry x="20" y="280" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="13" value="SageMaker" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#7c2d12;strokeColor=#ea580c;" vertex="1" parent="3">
+      <mxGeometry x="20" y="400" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="14" value="Lambda" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#312e81;strokeColor=#6366f1;" vertex="1" parent="3">
+      <mxGeometry x="20" y="520" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="20" value="Azure VMs" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#1a2e4a;strokeColor=#2563eb;" vertex="1" parent="4">
+      <mxGeometry x="20" y="40" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="21" value="Azure Blob" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#134e4a;strokeColor=#14b8a6;" vertex="1" parent="4">
+      <mxGeometry x="20" y="160" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="22" value="Azure SQL" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#134e4a;strokeColor=#14b8a6;" vertex="1" parent="4">
+      <mxGeometry x="20" y="280" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="23" value="Azure AI" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#7c2d12;strokeColor=#ea580c;" vertex="1" parent="4">
+      <mxGeometry x="20" y="400" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="24" value="Azure Functions" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#312e81;strokeColor=#6366f1;" vertex="1" parent="4">
+      <mxGeometry x="20" y="520" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="30" value="GCE" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#1a2e4a;strokeColor=#2563eb;" vertex="1" parent="5">
+      <mxGeometry x="20" y="40" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="31" value="GCS" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#134e4a;strokeColor=#14b8a6;" vertex="1" parent="5">
+      <mxGeometry x="20" y="160" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="32" value="Cloud SQL" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#134e4a;strokeColor=#14b8a6;" vertex="1" parent="5">
+      <mxGeometry x="20" y="280" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="33" value="Vertex AI" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#7c2d12;strokeColor=#ea580c;" vertex="1" parent="5">
+      <mxGeometry x="20" y="400" width="140" height="60" as="geometry"/>
+    </mxCell>
+    <mxCell id="34" value="Cloud Functions" style="rounded=1;whiteSpace=wrap;html=1;arcSize=4;strokeWidth=1;fontSize=13;fontColor=#bfdbfe;fillColor=#312e81;strokeColor=#6366f1;" vertex="1" parent="5">
+      <mxGeometry x="20" y="520" width="140" height="60" as="geometry"/>
+    </mxCell>
+  </root>
+</mxGraphModel>
