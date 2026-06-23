@@ -91,7 +91,7 @@ flow, flow-vertical, compare, layers, loop, tree, hub, columns, matrix, funnel, 
 `drawio-enhanced` is inspired by several excellent open-source projects. Thanks to these projects and their authors for their contributions to AI diagram generation, draw.io integration, and technical diagram design.
 
 - **[jgraph/drawio-mcp](https://github.com/jgraph/drawio-mcp)** - Inspired the draw.io MCP integration, CLI export flow, browser URL generation, basic XML skeleton, and cross-platform handling.
-- **[FlowForge / fireworks-tech-graph](https://github.com/yizhiyanhua-ai/fireworks-tech-graph)** - Provided valuable ideas for layout algorithms, color budgets, theme palettes, ASCII sketching, quality checks, and technical diagram design workflows.
+- **[FlowForge](https://github.com/wentong2022-arch/flowforge-skill)** - Provided valuable ideas for layout algorithms, color budgets, theme palettes, ASCII sketching, quality checks, and technical diagram design workflows.
 - **[fireworks-tech-graph](https://github.com/yizhiyanhua-ai/fireworks-tech-graph)** - Its SVG technical diagram system, including semantic shapes, semantic arrows, visual styles, icon libraries, and obstacle-aware routing, informed the draw.io style expansion.
 - **[DayuanJiang/next-ai-draw-io](https://github.com/DayuanJiang/next-ai-draw-io)** - Provided useful engineering references for AI-driven draw.io editing, XML validation and repair, shape libraries, version history, MCP architecture, and visual validation workflows.
 

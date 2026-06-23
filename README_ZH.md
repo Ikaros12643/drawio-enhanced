@@ -91,6 +91,6 @@ flow, flow-vertical, compare, layers, loop, tree, hub, columns, matrix, funnel, 
 `drawio-enhanced` 受到多个优秀开源项目的启发。感谢这些项目及其作者为 AI 图表生成、draw.io 集成和技术图表设计所做的贡献。
 
 - **[jgraph/drawio-mcp](https://github.com/jgraph/drawio-mcp)** - 提供了 draw.io MCP 集成、CLI 导出、浏览器 URL 生成、基础 XML 骨架和跨平台处理思路。
-- **[FlowForge / fireworks-tech-graph](https://github.com/yizhiyanhua-ai/fireworks-tech-graph)** - 在布局算法、颜色预算、主题色板、ASCII 草图流程、质量检查和技术图表设计方法上提供了重要启发。
+- **[FlowForge](https://github.com/wentong2022-arch/flowforge-skill)** - 在布局算法、颜色预算、主题色板、ASCII 草图流程、质量检查和技术图表设计方法上提供了重要启发。
 - **[fireworks-tech-graph](https://github.com/yizhiyanhua-ai/fireworks-tech-graph)** - 其 SVG 技术图表系统中的语义形状、语义箭头、视觉风格、图标库和避障路由思路，为 draw.io 风格扩展提供了参考。
 - **[DayuanJiang/next-ai-draw-io](https://github.com/DayuanJiang/next-ai-draw-io)** - 在 AI 驱动 draw.io 编辑、XML 校验修复、形状库、版本历史、MCP 架构和视觉校验流程方面提供了有价值的工程参考。
