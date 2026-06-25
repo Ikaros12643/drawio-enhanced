@@ -24,11 +24,12 @@
 
 ## 特性
 
-- **14 套视觉风格** - 融合 fireworks-tech-graph、FlowForge、Material Design 与云厂商品牌风格启发
+- **16 套视觉风格** - 融合 fireworks-tech-graph、FlowForge、Material Design、GPT Image 架构图、Visio 极简流程图与云厂商品牌风格启发
 - **轻量网格布局** - 直接放置节点，画布随内容自然扩展
 - **边预算与精简** - 主路径优先，复杂关系用合并边、注释、图例表达
 - **结构化工作流** - 需求理解 → 风格选择 → ASCII 草图 → 边精简 → XML 生成 → 轻量检查 → 交付
 - **颜色预算规则** - 防止“彩虹效应”，保持视觉层次清晰
+- **结构自检脚本** - 在 Python 可用时检查生成的 `.drawio` XML、ID、边端点和 geometry
 - **按需参考资料** - 密集图读取边路由参考，质量检查仅在出问题时读取
 - **draw.io 原生输出** - 生成可继续在 diagrams.net / draw.io 中手动编辑的 XML 图表
 
@@ -37,14 +38,15 @@
 ```text
 drawio-enhanced/
 ├── SKILL.md                          # 主 skill 文件: 工作流、XML 参考、关键规则
-├── themes/                           # 14 套样式定义: 色板、节点样式、箭头样式、文字样式
+├── themes/                           # 16 套样式定义: 色板、节点样式、箭头样式、文字样式
 ├── drawio-style-examples.md          # 6 套完整 XML 示例: 可直接复制使用
 ├── drawio-layout-algorithms.md       # 复杂布局参考: 坐标公式、适用场景
 ├── drawio-quality-checklist.md       # 故障排查清单: 布局/文本/XML/样式
+├── scripts/check-drawio.py           # 生成 .drawio 文件的结构自检脚本
 ├── examples/
-│   ├── flow-flat-icon.drawio         # 流程图: flat-icon 风格
-│   ├── compare-openai.drawio         # 对比图: openai 风格
-│   └── architecture-tech-blue.drawio # 架构图: tech-blue 风格
+│   ├── flat-icon-cicd-flow.drawio              # 流程图: flat-icon 风格
+│   ├── gpt-image-architecture-sample.drawio    # 分层架构图: GPT Image 风格
+│   └── visio-minimal-sample.drawio             # 工程流程图: Visio 极简风格
 ├── README.md                         # 英文 README
 └── README_ZH.md                      # 中文 README
 ```
@@ -73,6 +75,8 @@ drawio-enhanced/
 | 12 | indigo | FlowForge | bold、权威设计 |
 | 13 | material | Material Design | 正式文档、演示、产品流程 |
 | 14 | cloud-brand | 云厂商品牌 | AWS/Azure/GCP 云架构图 |
+| 15 | gpt-image-architecture | GPT Image 架构图风格 | 正式分层架构、平台能力图、数据平台图 |
+| 16 | visio-minimal | Visio 极简风格 | 简洁工程流程、运维过程、低装饰流程图 |
 
 ## 图表类型
 

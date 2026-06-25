@@ -24,11 +24,12 @@ Many existing diagram-generation skills are based on SVG or HTML. They can produ
 
 ## Features
 
-- **14 visual styles** - Inspired by fireworks-tech-graph, FlowForge, Material Design, and cloud vendor brand styles
+- **16 visual styles** - Inspired by fireworks-tech-graph, FlowForge, Material Design, GPT Image-style architecture diagrams, Visio-style engineering flows, and cloud vendor brand styles
 - **Lightweight grid layout** - Places nodes directly and lets the canvas expand naturally with content
 - **Edge budget and simplification** - Prioritizes the main path and uses merged edges, notes, or legends for complex relationships
 - **Structured workflow** - Requirement understanding → style selection → ASCII sketch → edge simplification → XML generation → lightweight checks → delivery
 - **Color budget rules** - Prevents the “rainbow effect” and keeps visual hierarchy clear
+- **Structural validation script** - Checks generated `.drawio` XML, IDs, edge endpoints, and geometry before delivery when Python is available
 - **References on demand** - Reads dense edge-routing references and quality checklists only when needed
 - **Native draw.io output** - Generates XML diagrams that can continue to be edited manually in diagrams.net / draw.io
 
@@ -37,14 +38,15 @@ Many existing diagram-generation skills are based on SVG or HTML. They can produ
 ```text
 drawio-enhanced/
 ├── SKILL.md                          # Main skill file: workflow, XML reference, key rules
-├── themes/                           # 14 style definitions: palettes, node styles, edge styles, text styles
+├── themes/                           # 16 style definitions: palettes, node styles, edge styles, text styles
 ├── drawio-style-examples.md          # 6 complete XML examples, ready to copy
 ├── drawio-layout-algorithms.md       # Complex layout reference: coordinate formulas and use cases
 ├── drawio-quality-checklist.md       # Troubleshooting checklist: layout, text, XML, style
+├── scripts/check-drawio.py           # Structural validation for generated .drawio files
 ├── examples/
-│   ├── flow-flat-icon.drawio         # Flow diagram in flat-icon style
-│   ├── compare-openai.drawio         # Comparison diagram in openai style
-│   └── architecture-tech-blue.drawio # Architecture diagram in tech-blue style
+│   ├── flat-icon-cicd-flow.drawio              # Flow diagram in flat-icon style
+│   ├── gpt-image-architecture-sample.drawio    # Layered architecture in GPT Image style
+│   └── visio-minimal-sample.drawio             # Minimal Visio-style engineering flow
 ├── README.md                         # English README
 └── README_ZH.md                      # Chinese README
 ```
@@ -73,6 +75,8 @@ drawio-enhanced/
 | 12 | indigo | FlowForge | Bold, authoritative diagrams |
 | 13 | material | Material Design | Formal docs, presentations, product flows |
 | 14 | cloud-brand | Cloud vendor brands | AWS/Azure/GCP cloud architecture diagrams |
+| 15 | gpt-image-architecture | GPT Image-style architecture | Formal layered architecture, platform capability maps, data platform diagrams |
+| 16 | visio-minimal | Visio-style minimalism | Clean engineering flows, operations procedures, low-decoration process diagrams |
 
 ## Diagram Types
 

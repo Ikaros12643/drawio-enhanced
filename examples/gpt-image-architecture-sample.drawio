@@ -1,0 +1,115 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="gpt-image-architecture-sample" id="gpt-image-architecture-sample">
+    <mxGraphModel dx="1500" dy="950" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1420" pageHeight="860" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" value="人机信任训练平台分层架构" style="text;html=1;strokeColor=none;fillColor=none;fontSize=22;fontStyle=1;fontColor=#1F4E79;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="470" y="18" width="480" height="36" as="geometry" />
+        </mxCell>
+        <mxCell id="label_app" value="应用层" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=0;fontSize=22;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;shadow=0;fillColor=#0B63A5;strokeColor=#0B63A5;" vertex="1" parent="1">
+          <mxGeometry x="28" y="72" width="104" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="label_data" value="数据处理&lt;br&gt;与分析层" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=0;fontSize=20;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;shadow=0;fillColor=#12805C;strokeColor=#12805C;" vertex="1" parent="1">
+          <mxGeometry x="28" y="342" width="104" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="label_service" value="数据及服务&lt;br&gt;支撑层" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=0;fontSize=20;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;shadow=0;fillColor=#C75A11;strokeColor=#C75A11;" vertex="1" parent="1">
+          <mxGeometry x="28" y="574" width="104" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="group_app" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;strokeWidth=1.3;fillColor=#FFFFFF;strokeColor=#7FB1D6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="72" width="1218" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="group_data" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;strokeWidth=1.3;fillColor=#FFFFFF;strokeColor=#7FB1D6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="342" width="1218" height="170" as="geometry" />
+        </mxCell>
+        <mxCell id="group_service" value="" style="rounded=1;whiteSpace=wrap;html=1;arcSize=3;strokeWidth=1.3;fillColor=#FFFFFF;strokeColor=#E4A36A;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="574" width="1218" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="app_login" value="登录界面&lt;br&gt;&lt;font color=&quot;#5B7184&quot;&gt;身份校验 / 角色权限&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#23445E;fillColor=#F8FBFF;strokeColor=#9FC4E2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="180" y="98" width="150" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="app_visual" value="系统数据可视化&lt;br&gt;&lt;font color=&quot;#5B7184&quot;&gt;综合看板 / 存储监测&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#23445E;fillColor=#F8FBFF;strokeColor=#9FC4E2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="350" y="98" width="150" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="app_relation" value="多场景数据结构化关联&lt;br&gt;&lt;font color=&quot;#5B7184&quot;&gt;架次档案 / 数据管理&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#23445E;fillColor=#F8FBFF;strokeColor=#9FC4E2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="520" y="98" width="170" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="app_trust_group" value="人机信任训练功能" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=15;fontStyle=1;fontColor=#1F4E79;fillColor=#F8FBFF;strokeColor=#7FB1D6;shadow=0;verticalAlign=top;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="710" y="98" width="360" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="trust_a" value="人员档案" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.1;fontSize=12;fontColor=#23445E;fillColor=#FFFFFF;strokeColor=#B8CEE0;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="732" y="145" width="92" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="trust_b" value="主观量表" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.1;fontSize=12;fontColor=#23445E;fillColor=#FFFFFF;strokeColor=#B8CEE0;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="838" y="145" width="92" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="trust_c" value="绩效计算" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.1;fontSize=12;fontColor=#23445E;fillColor=#FFFFFF;strokeColor=#B8CEE0;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="944" y="145" width="92" height="48" as="geometry" />
+        </mxCell>
+        <mxCell id="trust_flow" value="采集 → 评估 → 校准 → 方案生成 → 训练反馈" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.1;fontSize=12;fontColor=#23445E;fillColor=#FFFFFF;strokeColor=#B8CEE0;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="732" y="214" width="304" height="34" as="geometry" />
+        </mxCell>
+        <mxCell id="app_modeling" value="数据建模与可视分析&lt;br&gt;&lt;font color=&quot;#5B7184&quot;&gt;标签生成 / 常规分析&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#23445E;fillColor=#F8FBFF;strokeColor=#9FC4E2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="1090" y="98" width="150" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="app_admin" value="系统管理&lt;br&gt;&lt;font color=&quot;#5B7184&quot;&gt;用户 / 日志 / 审计&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#23445E;fillColor=#F8FBFF;strokeColor=#9FC4E2;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="98" width="80" height="172" as="geometry" />
+        </mxCell>
+        <mxCell id="api_app" value="标准化 API 接口（RESTful / HTTPS）" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontColor=#1F4E79;fillColor=#FFFFFF;strokeColor=#7FB1D6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="307" width="900" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="data_eval" value="信任状态评估算法集成&lt;br&gt;&lt;font color=&quot;#5B7184&quot;&gt;状态识别 / 精准评估&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#23445E;fillColor=#EAF7F1;strokeColor=#12805C;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="178" y="372" width="180" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="data_perf" value="任务绩效评估算法集成&lt;br&gt;&lt;font color=&quot;#5B7184&quot;&gt;量化训练效果&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#23445E;fillColor=#EAF7F1;strokeColor=#12805C;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="384" y="372" width="180" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="data_calibrate" value="多场景信任模型动态标定&lt;br&gt;&lt;font color=&quot;#5B7184&quot;&gt;参数调整 / 质量对齐&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#23445E;fillColor=#EAF7F1;strokeColor=#12805C;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="590" y="372" width="190" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="data_align" value="跨模态特征对齐引擎&lt;br&gt;&lt;font color=&quot;#5B7184&quot;&gt;时序一致性 / 数据基准&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#23445E;fillColor=#EAF7F1;strokeColor=#12805C;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="806" y="372" width="190" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="data_plan" value="智能训练方案生成引擎&lt;br&gt;&lt;font color=&quot;#5B7184&quot;&gt;个性化方案 / 自动生成&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#23445E;fillColor=#EAF7F1;strokeColor=#12805C;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="1022" y="372" width="190" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="data_render" value="多维度数据可视化渲染&lt;br&gt;&lt;font color=&quot;#5B7184&quot;&gt;图表 / 统计 / 趋势&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#23445E;fillColor=#EAF7F1;strokeColor=#12805C;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="1238" y="372" width="104" height="112" as="geometry" />
+        </mxCell>
+        <mxCell id="api_data" value="标准化数据服务接口（API 网关）" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontColor=#1F4E79;fillColor=#FFFFFF;strokeColor=#7FB1D6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="250" y="530" width="900" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="svc_archive" value="多场景试验架次档案库&lt;br&gt;&lt;font color=&quot;#8A5B2E&quot;&gt;统一存储与追溯&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#9A3F00;fillColor=#FFF7EF;strokeColor=#D06A1A;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="178" y="604" width="180" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="svc_pool" value="原始多模态数据资源池&lt;br&gt;&lt;font color=&quot;#8A5B2E&quot;&gt;图像 / 语音 / 设备&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#9A3F00;fillColor=#FFF7EF;strokeColor=#D06A1A;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="384" y="604" width="180" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="svc_model" value="处理后指标与模型资源库&lt;br&gt;&lt;font color=&quot;#8A5B2E&quot;&gt;模型文件 / 调用校准&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#9A3F00;fillColor=#FFF7EF;strokeColor=#D06A1A;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="590" y="604" width="190" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="svc_external" value="外部系统数据互通接口&lt;br&gt;&lt;font color=&quot;#8A5B2E&quot;&gt;模拟器 / 保障数据&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#9A3F00;fillColor=#FFF7EF;strokeColor=#D06A1A;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="806" y="604" width="190" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="svc_log" value="系统配置与日志审计库&lt;br&gt;&lt;font color=&quot;#8A5B2E&quot;&gt;权限 / 日志 / 追溯&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#9A3F00;fillColor=#FFF7EF;strokeColor=#D06A1A;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="1022" y="604" width="190" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="svc_role" value="权限与角色管理服务&lt;br&gt;&lt;font color=&quot;#8A5B2E&quot;&gt;功能与数据权限&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontStyle=1;fontColor=#9A3F00;fillColor=#FFF7EF;strokeColor=#D06A1A;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="1238" y="604" width="104" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="source_bar" value="多源数据接入：模拟器飞行数据 / 人机交互操作数据 / 可穿戴设备数据 / 主观问卷数据 / 语音视频数据 / 环境与设备数据" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;dashed=1;dashPattern=6 4;fontSize=13;fontColor=#1F4E79;fillColor=#FFFFFF;strokeColor=#7FB1D6;shadow=0;" vertex="1" parent="1">
+          <mxGeometry x="150" y="760" width="1218" height="46" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_app_data" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;endArrow=classic;endFill=1;strokeColor=#2F7DB8;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="api_app" target="data_calibrate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_data_service" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.6;endArrow=classic;endFill=1;strokeColor=#12805C;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" edge="1" parent="1" source="api_data" target="svc_model">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_source_service" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.4;endArrow=classic;endFill=1;strokeColor=#6B93B5;dashed=1;exitX=0.5;exitY=0;entryX=0.5;entryY=1;" edge="1" parent="1" source="source_bar" target="svc_pool">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

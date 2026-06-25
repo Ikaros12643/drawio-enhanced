@@ -9,7 +9,7 @@ description: >
 ---
 # Draw.io Enhanced
 
-融合轻量工作流 + 14 套视觉风格 + draw.io XML 模板 + 故障排查资料的图表生成 skill。
+融合轻量工作流 + 16 套视觉风格 + draw.io XML 模板 + 故障排查资料的图表生成 skill。
 默认目标是快速生成可打开、可编辑、结构清晰的 `.drawio` 文件；精确坐标优化仅在用户明确要求或排查渲染问题时进行。
 
 ## 工作流
@@ -36,6 +36,8 @@ description: >
 如果用户要求云厂商架构图，且明确指定 AWS、Azure 或 GCP，使用 `themes/cloud-brand.md` 中对应厂商的色板。如果用户只说“云架构图”但没有指定厂商，先询问使用哪个云厂商，不要默认猜测。
 
 如果用户未指定风格，直接使用推荐矩阵中的 `flat-icon` 风格。在用户明确要求选择、对风格敏感、或图表用于正式交付时询问确认。
+
+如果用户需要正式汇报型分层架构图、平台能力图、数据平台分层图，优先考虑 `gpt-image-architecture`；如果用户需要接近 Visio 的简洁工程流程图，优先考虑 `visio-minimal`。
 
 完整风格定义见 `themes/{name}.md`。
 
@@ -127,21 +129,38 @@ Direction: left-to-right | Nodes: 4 | Type: flow
 - 正确示例：`value="Text&lt;br&gt;&lt;font color=&quot;#6e6e80&quot;&gt;Author&lt;/font&gt;"`
 - 错误示例：`value="Text&lt;br&gt;&lt;font color="#6e6e80"&gt;Author&lt;/font&gt;"` （会导致 XML 解析失败）
 
-### 步骤 8: 轻量交付检查
+### 步骤 8: 结构自检
 
-交付前只检查这些会导致文件不可用的问题：
+交付前优先运行结构检查脚本，避免文件打不开或连线引用失效。结构自检只检查机器可验证的问题，不做视觉效果保证。
+
+优先使用 `uv`：
+
+```
+uv run scripts/check-drawio.py output.drawio
+```
+
+如果没有 `uv`，回退到 `python`：
+
+```
+python scripts/check-drawio.py output.drawio
+```
+
+检查项：
 
 - XML 格式合法
-- `id` 唯一
+- 存在完整 `mxfile` / `diagram` / `mxGraphModel` / `root` 结构；脚本也兼容 standalone `mxGraphModel`，但正式交付优先使用完整 `mxfile` 包装
+- `mxCell id` 唯一且不缺失
 - 边的 `source` / `target` 都存在
 - 每条边包含 `<mxGeometry relative="1" as="geometry"/>`
-- 节点没有明显重叠
-- 没有明显穿越节点的主路径边
-- 边数没有压过节点和分组的可读性
+- 每个节点包含 `<mxGeometry as="geometry"/>`
 
-不要为了间距细节、文本估算宽度或配色微调反复重算坐标。若边过多或明显穿插，优先精简边；不要通过继续加 waypoint 解决所有关系。
+如果脚本报错，先修复结构问题再交付；如果 `uv` 和 `python` 都不可用，不要阻塞交付，明确告诉用户：因本地环境缺少可用 Python 运行时，未执行结构检查，已直接交付 `.drawio` 文件。
 
-`drawio-quality-checklist.md` 仅作为故障排查资料：当用户反馈图表打不开、渲染异常、节点明显重叠、文本严重溢出、或导出失败时再读取。
+脚本可能给出边数过高等 warning。warning 不阻塞交付，但应优先通过删减、合并关系或注释表达来改善可读性。
+
+视觉检查不属于主流程硬要求。不要仅凭 XML 声称已确认最终渲染没有重叠、文本溢出或连线穿越；这些问题依赖 draw.io 渲染结果、截图或导出预览。
+
+`drawio-quality-checklist.md` 仅作为问题排查资料：当用户反馈图表打不开、渲染异常、节点明显重叠、文本严重溢出、连线穿越节点、图太乱或导出失败时再读取。若没有视觉/预览能力，只做结构检查和布局原则复核，并诚实说明无法确认最终视觉效果。
 
 ### 步骤 9: XML 自修复 (可选)
 
@@ -216,18 +235,20 @@ python scripts/fix-xml.py input.xml output.xml
 
 | 图表类型       | 推荐风格                                             |
 | -------------- | ---------------------------------------------------- |
-| 架构图         | flat-icon, openai, material, blueprint, tech-blue    |
+| 架构图         | gpt-image-architecture, flat-icon, openai, blueprint, tech-blue |
 | 云厂商架构图   | cloud-brand（需指定 AWS/Azure/GCP）, blueprint, tech-blue |
-| 流程图         | flat-icon, material, tech-blue, mint, terracotta     |
+| 流程图         | visio-minimal, flat-icon, material, tech-blue, mint, terracotta |
 | 对比图         | openai, material, notion, tech-blue, morandi         |
 | 时序图         | openai, material, notion, blueprint, tech-blue       |
 | UML 类图       | openai, material, notion, blueprint, morandi         |
 | ER 图          | openai, material, notion, blueprint, tech-blue       |
 | 网络拓扑       | flat-icon, blueprint, tech-blue, indigo              |
 | 思维导图       | flat-icon, notion, mint, indigo                      |
-| 数据流图       | flat-icon, blueprint, tech-blue, indigo              |
+| 数据流图       | flat-icon, blueprint, tech-blue, indigo, visio-minimal |
 | 时间线         | flat-icon, notion, mint, tech-blue                   |
 | Agent 架构     | flat-icon, openai, glassmorphism, claude             |
+| 正式分层架构   | gpt-image-architecture, tech-blue, blueprint         |
+| 工程流程/Visio | visio-minimal, material, tech-blue                   |
 
 ---
 
@@ -293,7 +314,7 @@ python scripts/fix-xml.py input.xml output.xml
 
 | 文件/目录                            | 何时读取                                                           |
 | ------------------------------------ | ------------------------------------------------------------------ |
-| `themes/{name}.md`                 | 应用颜色时 — 14 套独立样式文件                                    |
+| `themes/{name}.md`                 | 应用颜色时 — 16 套独立样式文件                                    |
 | `references/edge-routing.md`       | 密集图或故障排查时 — 主路径路由、边穿越严重、双向边重叠、路由异常 |
 | `references/layout-constraints.md` | 故障排查或复杂布局时 — 网格、间距、尺寸规范                       |
 | `references/edge-styles.md`        | 应用边样式时 — 标准/粗/虚线/动画/曲线模板                         |
@@ -301,7 +322,8 @@ python scripts/fix-xml.py input.xml output.xml
 | `references/xml-templates.md`      | 生成 XML 时 — 节点/箭头/容器模板 + 格式规则                       |
 | `references/xml-advanced.md`       | 进阶需求时 — 推理规则/嵌套容器/图层/标签/元数据/ELK/暗黑模式      |
 | `references/usage-guide.md`        | 交付后 — 打开文件/导出 PNG/SVG/PDF/WSL2/Troubleshooting           |
+| `scripts/check-drawio.py`           | 交付前结构自检 — XML、ID、边端点和 geometry 检查                  |
 | `scripts/fix-xml.py`               | XML 有语法问题时 — 24 步自动修复                                  |
 | `drawio-layout-algorithms.md`      | 复杂布局或用户要求严格布局时 — 12 种布局算法及公式                |
-| `examples/` 目录                   | 参考完整图表 — 12 个 `.drawio` 示例                             |
+| `examples/` 目录                   | 参考完整图表 — 14 个 `.drawio` 示例                             |
 | `drawio-quality-checklist.md`      | 故障排查时 — 图表打不开、渲染异常、导出失败、明显布局问题         |

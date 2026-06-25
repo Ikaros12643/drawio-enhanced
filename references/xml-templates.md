@@ -2,21 +2,30 @@
 
 ## 基础结构
 
-每个 `.drawio` 文件必须包含此结构：
+正式交付的 `.drawio` 文件优先使用完整 `mxfile` 包装结构：
 
 ```xml
-<mxGraphModel adaptiveColors="auto">
-  <root>
-    <mxCell id="0"/>
-    <mxCell id="1" parent="0"/>
-    <!-- 图表元素放在这里，parent="1" -->
-  </root>
-</mxGraphModel>
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="page-1">
+    <mxGraphModel adaptiveColors="auto" dx="1200" dy="800" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="800" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+        <!-- 图表元素放在这里，parent="1" -->
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
 ```
 
+- `mxfile` 是完整 draw.io 文件容器，适合作为最终 `.drawio` 交付物
+- `diagram` 表示一个页面；多页图可以包含多个 `diagram`
+- `mxGraphModel` 是单页图的图形模型
 - Cell `id="0"` 是根图层
 - Cell `id="1"` 是默认父图层
 - 所有图表元素使用 `parent="1"` (除非使用多层)
+
+兼容说明：draw.io 也能导入 standalone `mxGraphModel` 片段，旧示例中可能会出现这种结构；但新生成的 `.drawio` 文件应优先使用完整 `mxfile` 包装。
 
 ## 节点模板
 
