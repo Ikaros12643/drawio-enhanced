@@ -2,9 +2,6 @@
   <root>
     <mxCell id="0"/>
     <mxCell id="1" parent="0"/>
-    <mxCell id="title" value="2025 Product Roadmap" style="text;html=1;fontSize=16;fontColor=#1E293B;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
-      <mxGeometry x="310" y="15" width="300" height="25" as="geometry"/>
-    </mxCell>
     <mxCell id="container" value="" style="swimlane;startSize=24;rounded=1;arcSize=8;strokeWidth=1;strokeDashPattern=4 3;html=1;fillColor=#EEF0F8;strokeColor=#A0AAC8;container=1;recursiveResize=0;collapsible=0;" vertex="1" parent="1">
       <mxGeometry x="40" y="50" width="840" height="280" as="geometry"/>
     </mxCell>

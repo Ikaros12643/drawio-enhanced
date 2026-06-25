@@ -2,10 +2,6 @@
   <root>
     <mxCell id="0"/>
     <mxCell id="1" parent="0"/>
-    <!-- Title -->
-    <mxCell id="2" value="&lt;b&gt;Deployment Process&lt;/b&gt;" style="text;html=1;fontSize=16;fontColor=#f1f5f9;align=center;verticalAlign=middle;resizable=0;pointerEvents=0;" vertex="1" parent="1">
-      <mxGeometry x="200" y="20" width="300" height="30" as="geometry"/>
-    </mxCell>
     <!-- Developer Push -->
     <mxCell id="3" value="Developer Push" style="rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeWidth=1.5;fontSize=13;fontColor=#e2e8f0;fillColor=#1e293b;strokeColor=#3b82f6;" vertex="1" parent="1">
       <mxGeometry x="130" y="80" width="140" height="60" as="geometry"/>

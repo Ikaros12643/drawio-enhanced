@@ -99,7 +99,9 @@
 </mxCell>
 ```
 
-## 标题模板
+## 可选画布内标题模板
+
+默认不要使用画布内标题。图表名称应写入 `<diagram name="...">` 页签，避免嵌入文档时出现重复标题。只有用户明确要求“在图中显示标题/页眉”时才使用此模板。
 
 ```xml
 <mxCell id="title" value="&lt;b&gt;Diagram Title&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=16;fontStyle=1" vertex="1" parent="1">

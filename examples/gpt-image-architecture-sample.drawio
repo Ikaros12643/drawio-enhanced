@@ -4,9 +4,6 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="title" value="人机信任训练平台分层架构" style="text;html=1;strokeColor=none;fillColor=none;fontSize=22;fontStyle=1;fontColor=#1F4E79;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
-          <mxGeometry x="470" y="18" width="480" height="36" as="geometry" />
-        </mxCell>
         <mxCell id="label_app" value="应用层" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=0;fontSize=22;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;shadow=0;fillColor=#0B63A5;strokeColor=#0B63A5;" vertex="1" parent="1">
           <mxGeometry x="28" y="72" width="104" height="220" as="geometry" />
         </mxCell>

@@ -2,12 +2,6 @@
   <root>
     <mxCell id="0"/>
     <mxCell id="1" parent="0"/>
-
-    <!-- Title -->
-    <mxCell id="2" value="API Request Lifecycle" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontColor=#2d2418;fontStyle=1;" parent="1" vertex="1">
-      <mxGeometry x="300" y="15" width="300" height="25" as="geometry"/>
-    </mxCell>
-
     <!-- Participants (large rounded rectangles) -->
 
     <!-- Client (primary) -->

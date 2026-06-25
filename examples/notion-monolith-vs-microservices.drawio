@@ -2,12 +2,6 @@
   <root>
     <mxCell id="0" />
     <mxCell id="1" parent="0" />
-
-    <!-- Title -->
-    <mxCell id="2" value="Monolith vs Microservices Architecture" style="text;html=1;fontSize=16;fontColor=#37352f;fontStyle=1;align=center;verticalAlign=middle;whiteSpace=wrap;" vertex="1" parent="1">
-      <mxGeometry x="150" y="20" width="650" height="30" as="geometry" />
-    </mxCell>
-
     <!-- ===== LEFT: MONOLITH ===== -->
     <mxCell id="3" value="Monolith Application" style="swimlane;startSize=32;rounded=1;arcSize=4;strokeWidth=1;strokeColor=#e3e2e0;fillColor=#f7f6f3;fontSize=13;fontColor=#37352f;html=1;whiteSpace=wrap;verticalAlign=top;" vertex="1" parent="1">
       <mxGeometry x="40" y="80" width="240" height="400" as="geometry" />
