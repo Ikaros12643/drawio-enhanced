@@ -163,11 +163,12 @@ python scripts/fix-xml.py input.xml output.xml
 
 保存 `.drawio` 文件到 `./diagrams/{diagram-name}.drawio` 或用户指定路径。
 
-**如果用户要求导出** (PNG/SVG/PDF)：
+**如果用户要求导出，或交付结果适合直接预览**：
 
-1. 检测环境并定位 draw.io CLI (见 `references/usage-guide.md`)
-2. 使用 `--embed-diagram` 导出，保留可编辑性
-3. 导出成功后删除中间 `.drawio` 文件
+1. 默认导出 PNG，参数为 300% 缩放、透明背景，并使用 `--embed-diagram` 保留可编辑性
+2. 如果用户明确要求 SVG/PDF，则按用户指定格式导出
+3. 检测环境并定位 draw.io CLI (见 `references/usage-guide.md`)
+4. 保留 `.drawio` 源文件，便于后续继续编辑
 
 **打开文件**：使用对应平台的打开命令 (见 `references/usage-guide.md`)。如果命令失败，打印绝对文件路径。
 

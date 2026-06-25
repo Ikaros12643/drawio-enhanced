@@ -25,7 +25,7 @@ cmd.exe /c start "" "$(wslpath -w diagram.drawio)"
 
 ## 导出格式
 
-用户要求导出时，使用 draw.io CLI 进行导出。
+用户要求导出，或交付结果适合直接预览时，使用 draw.io CLI 进行导出。默认导出 PNG，300% 缩放，透明背景，并嵌入 diagram XML。
 
 ### 支持的格式
 
@@ -42,6 +42,12 @@ PNG、SVG、PDF 都支持 `--embed-diagram` — 导出文件包含完整的 diag
 
 ```bash
 drawio -x -f <format> -e -b 10 -o <output> <input.drawio>
+```
+
+默认 PNG 导出：
+
+```bash
+drawio -x -f png -e -t -s 3 -o <output.png> <input.drawio>
 ```
 
 | 参数 | 说明 |
@@ -78,9 +84,9 @@ grep -qi microsoft /proc/version 2>/dev/null && echo "WSL2"
 which drawio 2>/dev/null || where drawio 2>/dev/null
 ```
 
-**WSL2 导出示例**：
+**WSL2 默认 PNG 导出示例**：
 ```bash
-`/mnt/c/Program Files/draw.io/draw.io.exe` -x -f png -e -b 10 -o diagram.drawio.png diagram.drawio
+`/mnt/c/Program Files/draw.io/draw.io.exe` -x -f png -e -t -s 3 -o diagram.drawio.png diagram.drawio
 ```
 
 ---
@@ -90,7 +96,7 @@ which drawio 2>/dev/null || where drawio 2>/dev/null
 - 使用描述性名称，基于图表内容 (如 `login-flow`, `database-schema`)
 - 使用小写字母和连字符 (如 `ci-cd-pipeline.drawio`)
 - 导出时使用双扩展名：`name.drawio.png`, `name.drawio.svg`, `name.drawio.pdf` — 表示文件包含嵌入的 diagram XML
-- 成功导出后，删除中间 `.drawio` 文件 — 导出文件已包含完整 diagram
+- 保留 `.drawio` 源文件，便于后续继续编辑
 
 ---
 
@@ -103,7 +109,7 @@ which drawio 2>/dev/null || where drawio 2>/dev/null
 - `/drawio svg: ER diagram` → `er-diagram.drawio.svg`
 - `/drawio pdf architecture overview` → `architecture-overview.drawio.pdf`
 
-如果用户没有指定格式，只生成 `.drawio` 文件并打开。用户后续可以要求导出。
+如果用户没有指定格式，保存 `.drawio` 文件；如适合直接预览，另行默认导出 PNG（300% 缩放、透明背景）。
 
 ---
 
