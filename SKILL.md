@@ -1,11 +1,7 @@
 ---
 name: drawio-enhanced
-description: >
-  Generate editable draw.io diagrams quickly with a lightweight workflow, visual themes, and reusable XML templates.
-  Use when the user asks for draw.io/.drawio output, flowcharts, architecture diagrams, sequence diagrams, comparison charts, timelines, mind maps, or technical process diagrams.
-  Trigger on: "draw a diagram", "create a flowchart", "architecture diagram", "sequence diagram", "compare A vs B", "show the pipeline", "visualize the process", "make a chart", "diagram", "流程图", "架构图", "示意图", or any request to illustrate technical content.
-  Also trigger when the user provides a document and asks for diagrams to be inserted, or mentions drawio/.drawio files.
-  Prefer simple grid placement, sparse readable edges, and limited manual routing for dense diagrams. Do not perform detailed coordinate optimization unless explicitly requested.
+description: Generate editable draw.io diagrams quickly with a lightweight workflow, visual themes, and reusable XML templates.Use when the user asks for draw.io/.drawio output, flowcharts, architecture diagrams, sequence diagrams, comparison charts, timelines, mind maps, or technical process diagrams.
+Trigger on: "draw a diagram", "create a flowchart", "architecture diagram", "sequence diagram", "compare A vs B", "show the pipeline", "visualize the process", "make a chart", "diagram", "流程图", "架构图", "示意图", or any request to illustrate technical content.Also trigger when the user provides a document and asks for diagrams to be inserted, or mentions drawio/.drawio files.Prefer simple grid placement, sparse readable edges, and limited manual routing for dense diagrams. Do not perform detailed coordinate optimization unless explicitly requested.
 ---
 # Draw.io Enhanced
 
@@ -244,22 +240,22 @@ draw.io.exe --export --format png --scale 3 --transparent --embed-diagram --outp
 
 ## 风格推荐矩阵
 
-| 图表类型       | 推荐风格                                             |
-| -------------- | ---------------------------------------------------- |
+| 图表类型       | 推荐风格                                                        |
+| -------------- | --------------------------------------------------------------- |
 | 架构图         | gpt-image-architecture, flat-icon, openai, blueprint, tech-blue |
-| 云厂商架构图   | cloud-brand（需指定 AWS/Azure/GCP）, blueprint, tech-blue |
+| 云厂商架构图   | cloud-brand（需指定 AWS/Azure/GCP）, blueprint, tech-blue       |
 | 流程图         | visio-minimal, flat-icon, material, tech-blue, mint, terracotta |
-| 对比图         | openai, material, notion, tech-blue, morandi         |
-| 时序图         | openai, material, notion, blueprint, tech-blue       |
-| UML 类图       | openai, material, notion, blueprint, morandi         |
-| ER 图          | openai, material, notion, blueprint, tech-blue       |
-| 网络拓扑       | flat-icon, blueprint, tech-blue, indigo              |
-| 思维导图       | flat-icon, notion, mint, indigo                      |
-| 数据流图       | flat-icon, blueprint, tech-blue, indigo, visio-minimal |
-| 时间线         | flat-icon, notion, mint, tech-blue                   |
-| Agent 架构     | flat-icon, openai, glassmorphism, claude             |
-| 正式分层架构   | gpt-image-architecture, tech-blue, blueprint         |
-| 工程流程/Visio | visio-minimal, material, tech-blue                   |
+| 对比图         | openai, material, notion, tech-blue, morandi                    |
+| 时序图         | openai, material, notion, blueprint, tech-blue                  |
+| UML 类图       | openai, material, notion, blueprint, morandi                    |
+| ER 图          | openai, material, notion, blueprint, tech-blue                  |
+| 网络拓扑       | flat-icon, blueprint, tech-blue, indigo                         |
+| 思维导图       | flat-icon, notion, mint, indigo                                 |
+| 数据流图       | flat-icon, blueprint, tech-blue, indigo, visio-minimal          |
+| 时间线         | flat-icon, notion, mint, tech-blue                              |
+| Agent 架构     | flat-icon, openai, glassmorphism, claude                        |
+| 正式分层架构   | gpt-image-architecture, tech-blue, blueprint                    |
+| 工程流程/Visio | visio-minimal, material, tech-blue                              |
 
 ---
 
@@ -333,8 +329,8 @@ draw.io.exe --export --format png --scale 3 --transparent --embed-diagram --outp
 | `references/xml-templates.md`      | 生成 XML 时 — 节点/箭头/容器模板 + 格式规则                       |
 | `references/xml-advanced.md`       | 进阶需求时 — 推理规则/嵌套容器/图层/标签/元数据/ELK/暗黑模式      |
 | `references/usage-guide.md`        | 交付后 — 打开文件/导出 PNG/SVG/PDF/WSL2/Troubleshooting           |
-| `scripts/check-drawio.py`           | 交付前结构自检 — XML、ID、边端点和 geometry 检查                  |
+| `scripts/check-drawio.py`          | 交付前结构自检 — XML、ID、边端点和 geometry 检查                  |
 | `scripts/fix-xml.py`               | XML 有语法问题时 — 24 步自动修复                                  |
 | `drawio-layout-algorithms.md`      | 复杂布局或用户要求严格布局时 — 12 种布局算法及公式                |
-| `examples/` 目录                   | 参考完整图表 — 14 个 `.drawio` 示例                             |
+| `examples/` 目录                   | 参考完整图表 — 14 个`.drawio` 示例                              |
 | `drawio-quality-checklist.md`      | 故障排查时 — 图表打不开、渲染异常、导出失败、明显布局问题         |
