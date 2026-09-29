@@ -30,7 +30,7 @@
 ## 节点样式
 
 ```
-rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;
+rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=24;
 ```
 
 ## 箭头样式
@@ -43,13 +43,13 @@ edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.2;endArrow=classic;
 
 | 元素 | 颜色 | 字号 | 字重 |
 |------|------|------|------|
-| 标题 | `#2d2418` | 16 | 600 |
-| 节点 | `#3d2c1e` | 13 | 400 |
-| 副标题 | `#8a7560` | 11 | 400 |
-| 箭头标签 | `#a89279` | 10 | 400 |
+| 标题 | `#2d2418` | 30 | 600 |
+| 节点 | `#3d2c1e` | 24 | 400 |
+| 副标题 | `#8a7560` | 24 | 400 |
+| 箭头标签 | `#a89279` | 18 | 400 |
 
 ## 容器样式
 
 ```
-swimlane;startSize=24;rounded=1;arcSize=8;strokeWidth=1;strokeDashPattern=4 3;html=1;
+swimlane;startSize=42;rounded=1;arcSize=8;strokeWidth=1;strokeDashPattern=4 3;html=1;
 ```

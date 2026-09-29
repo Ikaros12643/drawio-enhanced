@@ -111,7 +111,7 @@ style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;h
 ### 带边标签的边 (标签在边上)
 
 ```xml
-<mxCell id="e1_label" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=10;" vertex="1" connectable="0" parent="e1">
+<mxCell id="e1_label" value="Yes" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=18;" vertex="1" connectable="0" parent="e1">
   <mxGeometry x="-0.5" y="0" relative="1" as="geometry">
     <mxPoint as="offset"/>
   </mxGeometry>

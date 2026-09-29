@@ -1,7 +1,6 @@
 ---
 name: drawio-enhanced
-description: Generate editable draw.io diagrams quickly with a lightweight workflow, visual themes, and reusable XML templates.Use when the user asks for draw.io/.drawio output, flowcharts, architecture diagrams, sequence diagrams, comparison charts, timelines, mind maps, or technical process diagrams.
-Trigger on: "draw a diagram", "create a flowchart", "architecture diagram", "sequence diagram", "compare A vs B", "show the pipeline", "visualize the process", "make a chart", "diagram", "流程图", "架构图", "示意图", or any request to illustrate technical content.Also trigger when the user provides a document and asks for diagrams to be inserted, or mentions drawio/.drawio files.Prefer simple grid placement, sparse readable edges, and limited manual routing for dense diagrams. Do not perform detailed coordinate optimization unless explicitly requested.
+description: Create editable draw.io diagrams. Use when the user wants to draw or generate a diagram with draw.io.
 ---
 # Draw.io Enhanced
 
@@ -71,21 +70,31 @@ Direction: left-to-right | Nodes: 4 | Type: flow
 
 默认不要在图中添加独立的画布内标题元素。图表名称应写入 `<diagram name="...">` 页签；只有用户明确要求“在图中显示标题/页眉”时，才添加顶部文本标题。
 
-默认网格：
+默认字号（所有主题、模板和新图均须遵守）：
+
+- 图形组件内的正文、说明和副标题统一使用 `fontSize=24`；HTML 富文本中的内联 `font-size` 也不得更小。
+- 连接线上的文字、独立边标签统一使用 `fontSize=18`。
+- 画布标题和分组、泳道标题默认使用 `fontSize=30`，可根据层级增大，但不要小于 28。
+- 主题只决定字体颜色、字重等视觉属性，不覆盖上述字号。用户明确指定字号时按用户要求。
+
+默认网格（尺寸为起点，不是固定上限）：
 
 - 起点：`x=40, y=80`
-- 列间距：180px
-- 行间距：120px
-- 普通节点：140x60
-- 富文本节点：180x80
-- 决策节点：140x80
-- 短标签/状态节点：120x40
+- 列间距：320px
+- 行间距：200px
+- 普通节点：260x100
+- 富文本节点：340x140
+- 决策节点：260x140
+- 短标签/状态节点：220x80
+
+先按最终字号估算标签占用空间，再确定节点尺寸和网格间距。节点宽度至少容纳最长一行文字及左右各 16px 内边距；高度至少容纳全部文字行、合理行距及上下各 12px 内边距。长文字优先扩大节点或合理换行，不通过缩小字号塞进框内。菱形、圆柱等有效文本区域较窄的形状需额外留白。分组和泳道随内部节点扩大，标题栏高度也要适配 30 号字。放置边标签时为 18 号字预留间隙，避免遮挡节点和其他边。
 
 布局原则：
 
 - 节点超过 6 个时优先换行、分组或改用垂直/分层布局，不要压缩到固定画布范围。
 - 画布随内容自然扩展；不要限制在固定 X/Y 范围内。
 - 坐标只需整齐、可读、可编辑；不追求像素级最优。
+- 生成后检查文字是否被裁切、溢出节点或与相邻节点、连线标签重叠；发现问题时优先扩大节点及间距。
 - 仅当用户要求严格布局、复杂树形/矩阵/时序图，或默认网格无法表达结构时，读取 `drawio-layout-algorithms.md`。
 - 相邻层之间保留明显的水平或垂直“边通道”。不要把节点排成让大量边斜穿中间节点的形态。
 - 对于层级架构图，优先让边在层与层之间垂直流动；跨列关系尽量减少，必要时放到层外侧绕行。
@@ -307,12 +316,12 @@ draw.io.exe --export --format png --scale 3 --transparent --embed-diagram --outp
 默认使用轻量网格，不限制画布宽高：
 
 - **起点**：x=40, y=80
-- **列间距**：180px
-- **行间距**：120px
-- **普通节点**：140x60
-- **富文本节点**：180x80
-- **决策节点**：140x80
-- **容器内边距**：20px
+- **列间距**：320px
+- **行间距**：200px
+- **普通节点**：260x100 起，按文字内容增大
+- **富文本节点**：340x140 起，按行数增大
+- **决策节点**：260x140 起，按有效文本区域增大
+- **容器内边距**：至少 24px
 - **画布**：随内容自然扩展
 
 ---

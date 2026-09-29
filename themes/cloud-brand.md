@@ -54,7 +54,7 @@
 ## 节点样式
 
 ```
-rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeWidth=1.5;fontSize=13;
+rounded=1;whiteSpace=wrap;html=1;arcSize=6;strokeWidth=1.5;fontSize=24;
 ```
 
 ## 箭头样式
@@ -67,10 +67,10 @@ edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=2;endArrow=classic;en
 
 | 元素 | 颜色 | 字号 | 字重 |
 |------|------|------|------|
-| 标题 | `#202124` | 16 | 600 |
-| 节点 | `#202124` | 13 | 400 |
-| 副标题 | `#5F6368` | 11 | 400 |
-| 箭头标签 | `#5F6368` | 10 | 400 |
+| 标题 | `#202124` | 30 | 600 |
+| 节点 | `#202124` | 24 | 400 |
+| 副标题 | `#5F6368` | 24 | 400 |
+| 箭头标签 | `#5F6368` | 18 | 400 |
 
 ## 容器样式
 

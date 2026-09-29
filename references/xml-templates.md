@@ -31,29 +31,29 @@
 
 **圆角矩形**：
 ```xml
-<mxCell id="2" value="Label" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#xxx;strokeColor=#yyy;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
-  <mxGeometry x="100" y="100" width="160" height="50" as="geometry"/>
+<mxCell id="2" value="Label" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#xxx;strokeColor=#yyy;strokeWidth=1.5;fontSize=24;" vertex="1" parent="1">
+  <mxGeometry x="100" y="100" width="260" height="100" as="geometry"/>
 </mxCell>
 ```
 
 **菱形 (决策)**：
 ```xml
-<mxCell id="3" value="Condition?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#xxx;strokeColor=#yyy;strokeWidth=1.5;fontSize=11;" vertex="1" parent="1">
-  <mxGeometry x="100" y="200" width="120" height="80" as="geometry"/>
+<mxCell id="3" value="Condition?" style="rhombus;whiteSpace=wrap;html=1;fillColor=#xxx;strokeColor=#yyy;strokeWidth=1.5;fontSize=24;" vertex="1" parent="1">
+  <mxGeometry x="100" y="240" width="260" height="140" as="geometry"/>
 </mxCell>
 ```
 
 **数据库圆柱**：
 ```xml
-<mxCell id="4" value="Database" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#xxx;strokeColor=#yyy;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
-  <mxGeometry x="100" y="300" width="120" height="80" as="geometry"/>
+<mxCell id="4" value="Database" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#xxx;strokeColor=#yyy;strokeWidth=1.5;fontSize=24;" vertex="1" parent="1">
+  <mxGeometry x="100" y="420" width="260" height="140" as="geometry"/>
 </mxCell>
 ```
 
 **椭圆**：
 ```xml
-<mxCell id="5" value="Start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#xxx;strokeColor=#yyy;strokeWidth=1.5;fontSize=13;" vertex="1" parent="1">
-  <mxGeometry x="100" y="400" width="80" height="60" as="geometry"/>
+<mxCell id="5" value="Start" style="ellipse;whiteSpace=wrap;html=1;fillColor=#xxx;strokeColor=#yyy;strokeWidth=1.5;fontSize=24;" vertex="1" parent="1">
+  <mxGeometry x="100" y="600" width="220" height="100" as="geometry"/>
 </mxCell>
 ```
 
@@ -68,14 +68,14 @@
 
 **带标签箭头**：
 ```xml
-<mxCell id="e2" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#xxx;endArrow=classic;endFill=1;" edge="1" source="3" target="4" parent="1">
+<mxCell id="e2" value="Yes" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#xxx;endArrow=classic;endFill=1;fontSize=18;" edge="1" source="3" target="4" parent="1">
   <mxGeometry relative="1" as="geometry"/>
 </mxCell>
 ```
 
 **虚线箭头**：
 ```xml
-<mxCell id="e3" value="async" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#xxx;endArrow=classic;endFill=1;dashed=1;" edge="1" source="2" target="5" parent="1">
+<mxCell id="e3" value="async" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;strokeWidth=1.5;strokeColor=#xxx;endArrow=classic;endFill=1;dashed=1;fontSize=18;" edge="1" source="2" target="5" parent="1">
   <mxGeometry relative="1" as="geometry"/>
 </mxCell>
 ```
@@ -84,11 +84,11 @@
 
 **泳道 (有标题)**：
 ```xml
-<mxCell id="lane1" value="Service A" style="swimlane;startSize=24;rounded=1;arcSize=8;fillColor=#xxx;strokeColor=#yyy;strokeWidth=1;strokeDashPattern=4 3;html=1;" vertex="1" parent="1">
-  <mxGeometry x="40" y="100" width="300" height="200" as="geometry"/>
+<mxCell id="lane1" value="Service A" style="swimlane;startSize=46;rounded=1;arcSize=8;fillColor=#xxx;strokeColor=#yyy;strokeWidth=1;strokeDashPattern=4 3;html=1;fontSize=30;" vertex="1" parent="1">
+  <mxGeometry x="40" y="100" width="540" height="320" as="geometry"/>
 </mxCell>
-<mxCell id="n1" value="Component" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#fff;strokeColor=#ddd;strokeWidth=1.5;fontSize=13;" vertex="1" parent="lane1">
-  <mxGeometry x="20" y="40" width="140" height="50" as="geometry"/>
+<mxCell id="n1" value="Component" style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#fff;strokeColor=#ddd;strokeWidth=1.5;fontSize=24;" vertex="1" parent="lane1">
+  <mxGeometry x="20" y="70" width="260" height="100" as="geometry"/>
 </mxCell>
 ```
 
@@ -104,8 +104,8 @@
 默认不要使用画布内标题。图表名称应写入 `<diagram name="...">` 页签，避免嵌入文档时出现重复标题。只有用户明确要求“在图中显示标题/页眉”时才使用此模板。
 
 ```xml
-<mxCell id="title" value="&lt;b&gt;Diagram Title&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=16;fontStyle=1" vertex="1" parent="1">
-  <mxGeometry x="300" y="20" width="200" height="30" as="geometry"/>
+<mxCell id="title" value="&lt;b&gt;Diagram Title&lt;/b&gt;" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=30;fontStyle=1" vertex="1" parent="1">
+  <mxGeometry x="300" y="20" width="360" height="60" as="geometry"/>
 </mxCell>
 ```
 
@@ -137,9 +137,9 @@
 
 ```xml
 <mxCell id="n1" value="1958&lt;br&gt;感知机&lt;br&gt;&lt;font color=&quot;#6e6e80&quot;&gt;Frank Rosenblatt&lt;/font&gt;" 
-        style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#10a37f;strokeWidth=1.5;fontSize=13;" 
+        style="rounded=1;whiteSpace=wrap;html=1;arcSize=8;fillColor=#ffffff;strokeColor=#10a37f;strokeWidth=1.5;fontSize=24;"
         vertex="1" parent="1">
-  <mxGeometry x="300" y="80" width="200" height="60" as="geometry"/>
+  <mxGeometry x="300" y="80" width="360" height="150" as="geometry"/>
 </mxCell>
 ```
 

@@ -26,6 +26,7 @@ Many existing diagram-generation skills are based on SVG or HTML. They can produ
 
 - **16 visual styles** - Inspired by fireworks-tech-graph, FlowForge, Material Design, GPT Image-style architecture diagrams, Visio-style engineering flows, and cloud vendor brand styles
 - **Lightweight grid layout** - Places nodes directly and lets the canvas expand naturally with content
+- **Readable text by default** - Uses 24 pt node text, 18 pt connector labels, and 30 pt headings; node sizes grow with their content
 - **Edge budget and simplification** - Prioritizes the main path and uses merged edges, notes, or legends for complex relationships
 - **Structured workflow** - Requirement understanding → style selection → ASCII sketch → edge simplification → XML generation → lightweight checks → delivery
 - **Color budget rules** - Prevents the “rainbow effect” and keeps visual hierarchy clear

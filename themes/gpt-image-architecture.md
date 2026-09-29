@@ -31,7 +31,7 @@
 ## 节点样式
 
 ```
-rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=13;fontColor=#23445E;shadow=0;
+rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=1.2;fontSize=24;fontColor=#23445E;shadow=0;
 ```
 
 ## 箭头样式
@@ -44,10 +44,10 @@ edgeStyle=orthogonalEdgeStyle;rounded=1;orthogonalLoop=1;jettySize=auto;html=1;s
 
 | 元素 | 颜色 | 字号 | 字重 |
 |------|------|------|------|
-| 标题 | `#1F4E79` | 16 | 600 |
-| 节点 | `#23445E` | 13 | 400 |
-| 副标题 | `#5B7184` | 11 | 400 |
-| 箭头标签 | `#47708F` | 10 | 400 |
+| 标题 | `#1F4E79` | 30 | 600 |
+| 节点 | `#23445E` | 24 | 400 |
+| 副标题 | `#5B7184` | 24 | 400 |
+| 箭头标签 | `#47708F` | 18 | 400 |
 
 ## 容器样式
 
@@ -58,7 +58,7 @@ rounded=1;whiteSpace=wrap;html=1;arcSize=3;strokeWidth=1.3;fillColor=#FFFFFF;str
 ## 左侧层级标签样式
 
 ```
-rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=0;fontSize=20;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;shadow=0;
+rounded=1;whiteSpace=wrap;html=1;arcSize=8;strokeWidth=0;fontSize=30;fontStyle=1;fontColor=#FFFFFF;align=center;verticalAlign=middle;shadow=0;
 ```
 
 ## 使用建议
